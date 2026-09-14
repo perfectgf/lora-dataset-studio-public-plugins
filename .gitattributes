@@ -1,0 +1,4 @@
+# TUF authenticates exact bytes, including line endings.
+public/** -text
+*.py text eol=lf
+*.yml text eol=lf

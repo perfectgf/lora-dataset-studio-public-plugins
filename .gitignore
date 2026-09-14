@@ -1,0 +1,22 @@
+# No signing material belongs in this public repository.
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.env
+.env*
+secrets/
+keys/
+private/
+.publish-history.json
+.publish-*
+.renew-*
+*.lock
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+.DS_Store
+Thumbs.db

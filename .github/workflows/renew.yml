@@ -1,0 +1,50 @@
+name: Renew signed catalog metadata
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-catalog-renewal
+  cancel-in-progress: false
+
+jobs:
+  renew:
+    if: github.repository == 'perfectgf/lora-dataset-studio-public-plugins' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Install pinned signing dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Verify and renew existing metadata
+        env:
+          LDS_TUF_TARGETS_KEY: ${{ secrets.LDS_TUF_TARGETS_KEY }}
+          LDS_TUF_SNAPSHOT_KEY: ${{ secrets.LDS_TUF_SNAPSHOT_KEY }}
+          LDS_TUF_TIMESTAMP_KEY: ${{ secrets.LDS_TUF_TIMESTAMP_KEY }}
+        run: .venv/bin/python renew.py
+      - name: Commit renewed metadata
+        run: |
+          git config user.name 'lora-dataset-studio'
+          git config user.email 'noreply@lora-dataset-studio.dev'
+          git add -- public/metadata
+          git diff --cached --quiet || git commit -m 'Renew existing catalog metadata'
+      - name: Push main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w 0)"
+          echo "::add-mask::$auth"
+          export GIT_CONFIG_COUNT=1
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth"
+          git push origin HEAD:refs/heads/main

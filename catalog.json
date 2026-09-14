@@ -1,0 +1,2147 @@
+{
+  "schema_version": 1,
+  "products": [
+    {
+      "id": "api_engines",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Choose an image engine",
+                  "path": "/plugins/api_engines/settings"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/api_engines/settings"
+              },
+              "setup_hint": "Connect your provider account or API key, then choose an engine in Test Studio.",
+              "surfaces": [
+                "Test Studio",
+                "Dataset",
+                "Image engine settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#api-image-engines-configuration-keys",
+                "settings-reference#api-keys",
+                "settings-reference#image-models",
+                "settings-reference#what-the-gemini-engine-will-and-will-not-do",
+                "settings-reference#chatgpt-subscription-experimental",
+                "using-the-app#generate-dataset-images-with-api-image-engines"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "requests": "==2.34.2"
+            },
+            "id": "api_engines",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "API image engines",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "engines": [
+                  "chatgpt_auth",
+                  "chatgpt_subscription_model",
+                  "openrouter_model",
+                  "nanobanana_model",
+                  "chatgpt_image_model"
+                ]
+              },
+              "config_sections": [],
+              "engines": [
+                "nanobanana",
+                "chatgpt",
+                "openrouter"
+              ],
+              "help_topics": [
+                "engines.chatgpt_auth",
+                "GEMINI_API_KEY",
+                "OPENAI_API_KEY",
+                "OPENROUTER_API_KEY",
+                "engines.openrouter_model",
+                "engines.nanobanana_model",
+                "engines.chatgpt_image_model",
+                "nanobanana-filter-and-synthid"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "chatgpt_subscription"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-08-09-setup-chatgpt-subscription",
+                "2026-07-29-chatgpt-failures-name-their-cause",
+                "2026-07-28-nano-banana-says-when-google-refused",
+                "2026-07-26-edit-the-reference-with-openrouter",
+                "2026-07-26-pick-the-model-of-every-api-engine",
+                "2026-07-26-openrouter-image-engine"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:write",
+              "secrets:GEMINI_API_KEY",
+              "secrets:OPENAI_API_KEY",
+              "secrets:OPENROUTER_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_api_engines",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.5"
+          },
+          "manifest_sha256": "75648767e93329b7fc80e42c6fb104860f83986d602bf7973e3afa02d76ff256",
+          "target": "plugins/api_engines/1.0.5.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/api_engines/1.0.5/27ad75ed62e0843c7f2ef72c24161de6920bbce74bf88b8a14606ab3516437b0.png",
+                "alt": "Choose image providers and configure their API keys.",
+                "caption": "Choose image providers and configure their API keys.",
+                "width": 1000,
+                "height": 666
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "camera_angles",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Re-shoot a picture from other camera positions with Qwen-Image-Edit and the Multiple-Angles LoRA — the subject stays put, the backdrop moves with the camera. On Gallery images and dataset images; the views land next to their source.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Gallery",
+                  "path": "/gallery"
+                },
+                {
+                  "label": "Open datasets",
+                  "path": "/datasets?section=images"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/camera_angles/settings"
+              },
+              "setup_hint": "Requires a configured ComfyUI and Camera model weights. Open an original image and choose Camera angles.",
+              "surfaces": [
+                "Gallery",
+                "Dataset",
+                "Camera setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#camera-angles-local",
+                "using-the-app#re-shoot-an-image-with-camera-angles"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "camera_angles",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Camera angles",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "camera"
+              ],
+              "help_topics": [
+                "setup-camera-install",
+                "action-camera-angles",
+                "action-camera-model",
+                "action-dataset-camera-angles"
+              ],
+              "install_actions": [
+                "camera_model",
+                "camera_lora",
+                "camera_speed_lora",
+                "camera_text_encoder"
+              ],
+              "install_groups": [
+                "camera"
+              ],
+              "model_slots": [
+                "camera_unet"
+              ],
+              "probes": [
+                "comfyui.camera_missing",
+                "comfyui.camera_ready"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-08-28-camera-model-choice",
+                "2026-08-26-camera-angles-dataset",
+                "2026-08-26-camera-setup-card",
+                "2026-08-26-camera-angles"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_camera_angles",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.4"
+          },
+          "manifest_sha256": "a26d89902b177266a5536c850440cff10f8fcf0474e075f3d413547f04739ee0",
+          "target": "plugins/camera_angles/1.0.4.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/camera_angles/1.0.4/955c232f24f8e1463eea46392717af5cc2509058ac1c4d7beae3e0d70bc9adad.png",
+                "alt": "Choose camera positions, height and framing for a new set of views.",
+                "caption": "Choose camera positions, height and framing for a new set of views.",
+                "width": 1280,
+                "height": 800
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "canvas",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Explore all your training runs on a visual board. Arrange checkpoints and image groups, compare or blend LoRAs, save layouts and export the board.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Canvas",
+                  "path": "/canvas"
+                }
+              ],
+              "setup": {
+                "label": "Configure local generation",
+                "path": "/setup?step=comfyui"
+              },
+              "setup_hint": "No extra Python runtime or model is needed for the board. Generate with the image engines already configured in LDS. Image upscaling and the resource monitor are optional plug-ins.",
+              "surfaces": [
+                "Canvas"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#the-lora-canvas-every-run-on-one-board",
+                "using-the-app#undeploy-several-loras-at-once"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "canvas",
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Canvas",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "canvas"
+              ],
+              "help_topics": [
+                "page-canvas",
+                "canvas-undeploy-bulk",
+                "canvas-arrange",
+                "canvas-layouts",
+                "canvas-image-delete",
+                "canvas-external-loras",
+                "canvas-generate",
+                "canvas-blend",
+                "canvas-continue",
+                "canvas-pin-all",
+                "canvas-reference-image",
+                "canvas-pinned-images",
+                "canvas-image-groups",
+                "canvas-deploy-state",
+                "canvas-run-gallery",
+                "canvas-delete-run-cascade"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [],
+              "tables": [
+                "canvas_node_position",
+                "canvas_image_node",
+                "canvas_lane_placement",
+                "canvas_layout_preset"
+              ],
+              "whats_new_ids": [
+                "2026-09-01-canvas-lanes-move-and-resize",
+                "2026-08-20-canvas-room-to-work",
+                "2026-08-18-canvas-one-grid-per-checkpoint",
+                "2026-08-17-canvas-bulk-undeploy",
+                "2026-08-10-canvas-gallery-open-folder",
+                "2026-08-10-canvas-edges-tinted-per-dataset",
+                "2026-08-09-canvas-pins-float-both-ways",
+                "2026-08-09-canvas-phone-board-room",
+                "2026-08-09-canvas-external-lora-links",
+                "2026-08-09-canvas-phone-toolbar",
+                "2026-08-09-canvas-external-loras",
+                "2026-08-08-the-canvas-controls-live-on-the-board",
+                "2026-08-08-canvas-filter-bar",
+                "2026-08-08-canvas-zoom-labels",
+                "2026-08-08-canvas-layout-presets",
+                "2026-08-08-canvas-export-png",
+                "2026-08-08-canvas-delete-image",
+                "2026-08-04-canvas-says-which-run-trained-a-full-model",
+                "2026-08-04-canvas-drop-keeps-your-view",
+                "2026-08-03-canvas-images-go-anywhere",
+                "2026-08-03-canvas-group-drag-out-crash",
+                "2026-08-03-canvas-usable-on-a-phone",
+                "2026-08-03-canvas-opens-again-hotfix",
+                "2026-08-03-canvas-blend-provenance",
+                "2026-08-03-canvas-group-bar-reachable",
+                "2026-08-03-canvas-image-controls-see-through",
+                "2026-08-03-canvas-filter-opens-folded",
+                "2026-08-03-canvas-blend",
+                "2026-08-01-canvas-runs-stay-separate-and-in-epoch-order",
+                "2026-08-01-canvas-shows-the-dataset-reference-face",
+                "2026-07-28-download-canvas-images-one-or-the-whole-gallery",
+                "2026-07-28-canvas-fuse-pinned-images",
+                "2026-07-28-canvas-pin-all-generated-images",
+                "2026-07-28-canvas-node-buttons-reachable-on-a-phone",
+                "2026-07-28-pin-to-canvas-from-the-thumbnail",
+                "2026-07-27-canvas-pinned-images",
+                "2026-07-27-canvas-deployed-at-a-glance",
+                "2026-07-27-canvas-run-card-opens-everything",
+                "2026-07-27-canvas-checkpoint-actions",
+                "2026-07-27-canvas-details-on-demand",
+                "2026-07-27-canvas-generation-visible",
+                "2026-07-26-canvas-generate-from-the-board",
+                "2026-07-26-canvas-move-cards",
+                "2026-07-17-canvas-lora-chain"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_canvas",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.0"
+          },
+          "manifest_sha256": "2d3dd9a6614cc61eb050c4e934e481c7491c02de31a1065fb0c8052677c9537b",
+          "target": "plugins/canvas/1.0.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/canvas/1.0.0/ff157834c3a4b8b758e1eb692d87fccd207dcef2b8c3ce314b04c5f1ce367854.png",
+                "alt": "Prepare checkpoint-based generation from the Canvas board.",
+                "caption": "Prepare checkpoint-based generation from the Canvas board.",
+                "width": 1280,
+                "height": 900
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "civitai_publish",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.12",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Publish a trained checkpoint as a Civitai model page and post the images it generated under that page, without leaving the app — from a checkpoint's popover (run graph, LoRA Canvas) and from the image viewer. Uses the Civitai API key the scraper and the prompt browser already share.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open checkpoints",
+                  "path": "/datasets?section=checkpoints"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/civitai_publish/settings"
+              },
+              "setup_hint": "Connect your Civitai API key. Publication starts from a dataset checkpoint or model.",
+              "surfaces": [
+                "Dataset checkpoints",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-lora-and-its-images-to-civitai",
+                "settings-reference#civitai-publishing"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0",
+              "requests": "==2.34.2"
+            },
+            "id": "civitai_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Civitai",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "civitai"
+              ],
+              "engines": [],
+              "help_topics": [
+                "civitai-publish",
+                "civitai.link_host"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "civitai"
+              ],
+              "tables": [
+                "civitai_link"
+              ],
+              "whats_new_ids": [
+                "2026-09-02-publish-to-civitai"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:CIVITAI_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_civitai_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.0"
+          },
+          "manifest_sha256": "d0a08f761ef12037fb4d132cbbaac4a7c60f0df1d94397d9fc0025a027b0eab4",
+          "target": "plugins/civitai_publish/1.0.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/civitai_publish/1.0.0/239151d3470e89da96a874cb538d12c7052ef9f258cd0cac93f630b6109bcb39.png",
+                "alt": "Prepare an image post linked to a Civitai model.",
+                "caption": "Prepare an image post linked to a Civitai model.",
+                "width": 1280,
+                "height": 800
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cloud_training",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.17",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": "<2027,>=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<3.15,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Train images and videos on rented GPUs, supervise runtime and recover checkpoints. Includes full-model delivery and Hub storage.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open training",
+                  "path": "/datasets?section=training"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/cloud_training/settings"
+              },
+              "setup_hint": "Configure a cloud provider to train images or videos. Cloud work can incur provider charges.",
+              "surfaces": [
+                "Dataset training",
+                "Video training",
+                "Run history",
+                "Cloud settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#compare-settings-with-two-runs-at-once",
+                "settings-reference#cloud-gpu-vast-ai",
+                "settings-reference#cloud-training",
+                "settings-reference#full-model-dense-recipe",
+                "settings-reference#cloud-run-housekeeping",
+                "settings-reference#hugging-face-storage",
+                "dataset-guide#10-full-model-recipe-what-you-can-change",
+                "settings-reference#cloud-training-configuration-keys"
+              ]
+            },
+            "host_dependencies": {
+              "filelock": "==3.32.5",
+              "flask": "==3.1.3",
+              "huggingface-hub": ">=0.24",
+              "requests": "==2.34.2"
+            },
+            "id": "cloud_training",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Cloud training",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "paths": [
+                  "cloud_runs_dir"
+                ]
+              },
+              "config_sections": [
+                "cloud"
+              ],
+              "engines": [],
+              "help_topics": [
+                "VAST_API_KEY",
+                "cloud.max_concurrent_runs",
+                "cloud.max_price_per_hour",
+                "cloud.monthly_budget_usd",
+                "cloud.stall_timeout_minutes",
+                "cloud.first_step_timeout_minutes",
+                "cloud.first_step_download_budget_minutes",
+                "cloud.max_runtime_minutes",
+                "cloud.freeze_watchdog_minutes",
+                "cloud.upload_stall_minutes",
+                "cloud.unreachable_grace_minutes",
+                "cloud.min_reliability",
+                "cloud.verified_only",
+                "cloud.secure_cloud_only",
+                "cloud.full_transformer.delivery",
+                "cloud.dense_fetch_local",
+                "cloud.full_transformer.private_storage_limit_gb",
+                "cloud.hf_storage",
+                "training.full_model_recipe",
+                "training.full_model_base",
+                "training.full_model_quality",
+                "training.full_model_fp8_export",
+                "paths.cloud_runs_dir",
+                "workspace-dense-models",
+                "parallel-cloud-runs",
+                "runs-clean-one-run-staging",
+                "storage-orphan-run-folders",
+                "video-cloud-training"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "cloud_training",
+                "vast"
+              ],
+              "tables": [
+                "cloud_training_run"
+              ],
+              "whats_new_ids": [
+                "2026-09-05-zz-vast-referral-link",
+                "2026-09-02-video-cloud-launch-window",
+                "2026-08-30-video-cloud-gpu-picker",
+                "2026-08-29-video-lora-in-the-cloud",
+                "2026-08-17-vast-do-not-rent-this-machine-again",
+                "2026-08-07-parallel-cloud-runs",
+                "2026-08-04-full-model-run-no-longer-reads-as-gone",
+                "2026-08-04-full-model-lands-on-your-computer",
+                "2026-08-04-cloud-quantize-rents-a-machine-that-fits",
+                "2026-08-03-quantize-in-the-cloud-without-downloading",
+                "2026-08-03-hf-storage-precheck-and-cleanup",
+                "2026-08-03-restart-no-longer-kills-a-live-cloud-run",
+                "2026-08-02-cloud-launch-is-observable",
+                "2026-08-02-cloud-only-installs-see-their-checkpoints",
+                "2026-08-01-verified-cloud-token-stops-nagging",
+                "2026-07-28-cloud-boot-waits-for-a-pod-that-is-still-working",
+                "2026-07-28-cloud-watchdog-counts-a-downloading-pod-as-progress",
+                "2026-07-28-cloud-run-download-bytes-and-durable-freeze-clock",
+                "2026-07-28-busy-database-no-longer-strands-a-paid-cloud-run",
+                "2026-07-26-cloud-run-survives-a-busy-database",
+                "2026-07-26-cloud-run-survives-a-restart-after-submit",
+                "2026-07-26-cloud-checkpoint-rescue-is-never-cut-short",
+                "2026-07-26-cloud-stop-that-cannot-lie",
+                "2026-07-21-cloud-unreachable-grace",
+                "2026-07-17-slider-lora-cloud"
+              ]
+            },
+            "permissions": [
+              "network",
+              "secrets:VAST_API_KEY",
+              "secrets:HF_CLOUD_TOKEN",
+              "secrets:HF_TOKEN",
+              "filesystem",
+              "datasets:read",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_cloud_training",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.0"
+          },
+          "manifest_sha256": "7b593898b7263ff6a6d9cc5968a4719d9525460bf264ac26cd702789fb663503",
+          "target": "plugins/cloud_training/1.0.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/cloud_training/1.0.0/1e4fb0339e224d2e76ea3478c5ebf205a87dc13dfd934c1e70cfb46a1bab3694.png",
+                "alt": "Compare GPU speed and estimated cost before starting a cloud run.",
+                "caption": "Compare GPU speed and estimated cost before starting a cloud run.",
+                "width": 538,
+                "height": 629
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hf_publish",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Export a dataset to the Hugging Face Hub as a dataset repo — the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card — from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open dataset export",
+                  "path": "/datasets?section=export"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/hf_publish/settings"
+              },
+              "setup_hint": "Use a Hugging Face token with permission to write the destination repository.",
+              "surfaces": [
+                "Dataset export",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-dataset-to-hugging-face"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "hf_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Hugging Face",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "hf-publish",
+                "hf-publish-token"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "hf_publish"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-09-hf-style-dataset-card"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:HF_TOKEN"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_hf_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.5"
+          },
+          "manifest_sha256": "af29dff22a64dd295ec121d760edb5cb22745c9b1a694093d62a747626997ec9",
+          "target": "plugins/hf_publish/1.0.5.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/hf_publish/1.0.5/d0fa240bbb29070177734005a35e74edfedeebaf38236289d0291f1aedb90d39.png",
+                "alt": "Configure Hugging Face publishing access in the plugin settings.",
+                "caption": "Configure Hugging Face publishing access in the plugin settings.",
+                "width": 1440,
+                "height": 1000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "image_upscale",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Improve detail with Klein, including instruction editing, LoRA presets, settings and finishing. Independent of SeedVR2 and other LDS plug-ins.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Improve dataset images",
+                  "path": "/datasets?section=images"
+                },
+                {
+                  "label": "Improve Bank images",
+                  "path": "/bank"
+                },
+                {
+                  "label": "Open settings",
+                  "path": "/plugins/image_upscale/settings?focus=klein-improve-settings"
+                }
+              ],
+              "setup": {
+                "label": "Configure Klein Improve",
+                "path": "/plugins/image_upscale/settings?focus=klein-improve-settings"
+              },
+              "setup_hint": "Use the local Klein models configured in LDS. Adjust the improvement instruction, LoRA strengths and finishing here. SeedVR2 is a separate optional product.",
+              "surfaces": [
+                "Bank",
+                "Dataset",
+                "Gallery",
+                "Canvas",
+                "Upscale settings",
+                "Upscale setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#improve-finishing",
+                "using-the-app#upscale-a-picture-straight-from-the-board",
+                "settings-reference#klein-improvement-settings"
+              ]
+            },
+            "host_dependencies": {},
+            "id": "image_upscale",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Klein Improve",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "identity_prompts": [
+                  "klein_improve",
+                  "klein_improve_enabled"
+                ],
+                "improve": [
+                  "colour_match",
+                  "sharpen",
+                  "grain",
+                  "grain_saturation"
+                ],
+                "klein": [
+                  "improve_consistency_strength",
+                  "improve_character_lora_strength",
+                  "improve_steps",
+                  "improve_base_lora_strength",
+                  "improve_megapixels",
+                  "improve_lora_preset"
+                ]
+              },
+              "config_sections": [],
+              "engines": [
+                "klein"
+              ],
+              "help_topics": [
+                "improve.colour_match",
+                "improve.sharpen",
+                "improve.grain",
+                "improve.grain_saturation",
+                "identity_prompts.klein_improve",
+                "klein.improve_strength",
+                "action-bank-improve",
+                "action-edit-improve-instruction",
+                "action-reimprove-tile",
+                "action-canvas-improve",
+                "image_upscale.default_engine"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-07-klein-improve-seedvr2-split",
+                "2026-09-01-bank-improve-carries-the-dials",
+                "2026-09-01-improve-panel-lora-strengths",
+                "2026-09-01-improve-result-zoom",
+                "2026-08-29-improve-settings-window",
+                "2026-08-24-use-these-improve-settings",
+                "2026-08-24-improve-output-size-in-note",
+                "2026-08-24-improve-lora-preset",
+                "2026-08-08-improve-instruction-editable-in-place",
+                "2026-08-05-upscale-improve-finds-its-lora-on-a-docker-install",
+                "2026-08-04-gallery-lightbox-upscale-improve",
+                "2026-08-03-canvas-lightbox-upscale-improve",
+                "2026-08-03-improve-note-cites-the-setting",
+                "2026-08-02-upscale-candidate-visible",
+                "2026-07-30-keep-an-improvement-without-training-on-both",
+                "2026-07-28-choose-the-klein-model-improve-runs-on",
+                "2026-07-28-improve-says-what-it-is-about-to-ask-klein",
+                "2026-07-27-rerun-upscale-and-improve",
+                "2026-07-23-bulk-improve-is-a-server-job",
+                "2026-07-22-improve-tuned-profile-and-loud-missing-lora",
+                "2026-07-22-enhancement-lora-installed-automatically",
+                "2026-07-22-improve-strength-settings",
+                "2026-09-07-image-upscale-product"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "filesystem",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_image_upscale",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.1.1"
+          },
+          "manifest_sha256": "2432e1a671434139422ea1f98f04d42b3d17a7319a37cf7dc17ca407ce10a769",
+          "target": "plugins/image_upscale/1.1.1.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/image_upscale/1.1.1/4b9a953d6418e5f7632a9489698c66a78ff65c63a42570f873a5942978de1e50.png",
+                "alt": "Compare the original image with a Klein improvement.",
+                "caption": "Compare the original image with a Klein improvement.",
+                "width": 1600,
+                "height": 1145
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.21",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Run a continuous local H3 channel from scripted scenes, with a browser player and VLC stream. Includes its own setup and LoRA controls; no other LDS plugin is required.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Live",
+                  "path": "/studio?lane=live"
+                }
+              ],
+              "setup": {
+                "label": "Prepare Live",
+                "path": "/plugins/live/settings"
+              },
+              "setup_hint": "Prepare the stream encoder and H3 in ComfyUI. Existing compatible H3 files are reused. No other LDS plugin is required.",
+              "surfaces": [
+                "Live studio",
+                "Live setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [
+              {
+                "entry": "frontend/hls.worker.js",
+                "loaders": [
+                  "frontend/chunks/hls-CoQ9AaYu.js"
+                ]
+              }
+            ],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#a-live-channel-from-your-video-lora",
+                "using-the-app#install-live"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "live",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Live channels",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "page-video-live",
+                "setup-live"
+              ],
+              "install_actions": [
+                "live_encoder",
+                "live_h3_base",
+                "live_h3_text_encoder",
+                "live_h3_video_vae",
+                "live_h3_audio_vae",
+                "live_h3_turbo_lora"
+              ],
+              "install_groups": [],
+              "job_kinds": [
+                "is_live"
+              ],
+              "model_slots": [],
+              "probes": [
+                "live"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-03-video-live-channel"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "gpu",
+              "filesystem",
+              "network"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_live",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.2"
+          },
+          "manifest_sha256": "6bc2f8205df799f6853b38d8f8e7fb0620023f23554ca64447d612dd47e0f801",
+          "target": "plugins/live/1.0.2.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/live/1.0.2/7158322e7f70dab0be74d038d8be89565d08cab605c6902bfa28023e88fa8e4d.png",
+                "alt": "Prepare a continuous Live channel with scenes, clip length and playback controls.",
+                "caption": "Prepare a continuous Live channel with scenes, clip length and playback controls.",
+                "width": 1440,
+                "height": 1154
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "model_tools",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.15",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model — pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in’s settings.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Model tools",
+                  "path": "/plugins/model_tools/settings"
+                },
+                {
+                  "label": "Open checkpoints",
+                  "path": "/datasets?section=checkpoints"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/model_tools/settings"
+              },
+              "setup_hint": "Install the CPU engine in Model tools settings, then choose local model files. Quantization and merging share this isolated environment; no other plugin or GPU is required.",
+              "surfaces": [
+                "Model tools settings",
+                "Dataset checkpoints",
+                "Full model recipes"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#model-tools-configuration-keys",
+                "settings-reference#quantize-a-delivered-checkpoint",
+                "using-the-app#merge-a-lora-into-a-base-checkpoint",
+                "settings-reference#quantize-an-existing-model-to-fp8",
+                "dataset-guide#quantizing-a-model-you-already-have",
+                "dataset-guide#quantize-to-fp8-one-click-no-path-to-find"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "model_tools",
+            "in_process_requirements": false,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Model tools",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "quantize"
+              ],
+              "engines": [],
+              "help_topics": [
+                "training.fp8_deliver",
+                "storage.fp8_quantize",
+                "training.fp8_quantize_local",
+                "workspace-lora-merge"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "model_tools"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-09-model-tools-managed-cpu-engine",
+                "2026-09-09-model-tools-local-without-cloud",
+                "2026-08-04-quantizing-no-longer-fails-on-the-paging-file",
+                "2026-08-04-merge-a-lora-into-a-base-checkpoint",
+                "2026-08-04-fp8-quantize-runs-where-torch-lives",
+                "2026-08-04-quantize-to-fp8-in-one-click",
+                "2026-08-04-quantize-to-fp8-from-settings-storage",
+                "2026-08-03-quantize-an-existing-model-to-fp8"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "filesystem"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_model_tools",
+            "requirements": "requirements-workers.txt",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.8"
+          },
+          "manifest_sha256": "331fc9893b019f782c53f50c310c81daed0abf03bf1c118b5f2958b48ec8f4a1",
+          "target": "plugins/model_tools/1.0.8.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/model_tools/1.0.8/75e20630b2e07398e21ed477ee35580ec9ee6664368a17cedc68444e45341bdc.png",
+                "alt": "Access FP8 conversion and LoRA merging from a full-model card.",
+                "caption": "Access FP8 conversion and LoRA merging from a full-model card.",
+                "width": 1440,
+                "height": 1000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource_monitor",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.9",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "CPU, GPU, RAM, VRAM and temperature readings in the header and on an installed Canvas, with guarded memory release. Polling stops when folded or hidden.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open workspace and expand the chart button",
+                  "path": "/datasets"
+                }
+              ],
+              "setup": {
+                "label": "Open resource monitor guide",
+                "path": "/guide/resource_monitor.guide"
+              },
+              "setup_hint": "Ready after activation. Expand the chart button in the header; Canvas is optional. No model download is needed.",
+              "surfaces": [
+                "Workspace header",
+                "Canvas when installed"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [
+                "resource_monitor.guide"
+              ],
+              "sections": [
+                "resource_monitor.guide#resource-monitor"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "resource_monitor",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Resource monitor",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "canvas-machine-load",
+                "system-free-memory"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-06-zzzzz-comfyui-interrupt-second-press",
+                "2026-09-02-free-memory-button",
+                "2026-08-28-header-machine-load",
+                "2026-08-09-canvas-machine-load"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "network"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_resource_monitor",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.0"
+          },
+          "manifest_sha256": "2a8177437adcb33c006efa4c962601deb814e60d925cb4cf2ae7ff4b37e61d27",
+          "target": "plugins/resource_monitor/1.0.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/resource_monitor/1.0.0/c411e77f6396a4dad84723296d2e6cb55c29b40fa8069c3d4efe3715a42ec3a1.png",
+                "alt": "Monitor CPU, GPU, memory and temperature from the app header.",
+                "caption": "Monitor CPU, GPU, memory and temperature from the app header.",
+                "width": 1280,
+                "height": 800
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "scrape",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Search Reddit, Pexels or the open web by keyword, or scan a gallery URL, and import the pictures or clips you pick into a dataset, an image bank or a video bank.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open image bank",
+                  "path": "/bank"
+                },
+                {
+                  "label": "Open datasets",
+                  "path": "/datasets"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/scrape/settings"
+              },
+              "setup_hint": "Prepare scraping dependencies and source credentials in this plug-in. Some sources also need an existing login session.",
+              "surfaces": [
+                "Image bank",
+                "Dataset imports",
+                "Video bank imports"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#web-scraping-source-credentials",
+                "settings-reference#klein-rescue-small-scraped-images",
+                "using-the-app#import-images-with-web-scraping"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "requests": "==2.34.2"
+            },
+            "id": "scrape",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Web scraping",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "klein": [
+                  "small_image_prompt"
+                ]
+              },
+              "config_sections": [],
+              "help_topics": [
+                "video-bank-scrape",
+                "workspace-scrape",
+                "bank-scrape",
+                "action-scrape-scan",
+                "action-scrape-websearch",
+                "REDDIT_CLIENT_ID",
+                "PEXELS_API_KEY",
+                "klein.small_image_prompt"
+              ],
+              "install_actions": [
+                "scrape_extras"
+              ],
+              "install_groups": [],
+              "probes": [
+                "scrape_deps",
+                "scrape_deps_detail"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-08-06-bank-scrape-keeps-provenance",
+                "2026-07-28-scrape-straight-into-a-bank",
+                "2026-07-22-install-everything-covers-scraper",
+                "2026-07-21-instagram-scrape-and-english-messages",
+                "2026-07-17-scrape-section"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:write",
+              "banks:write",
+              "secrets:CIVITAI_API_KEY",
+              "secrets:PEXELS_API_KEY",
+              "secrets:REDDIT_CLIENT_ID"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_scrape",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.7"
+          },
+          "manifest_sha256": "899464888d0739b01042227cf5a8e4d6946bb022829f6848020254ae075e294f",
+          "target": "plugins/scrape/1.0.7.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/scrape/1.0.7/27d2cc367f4e287e483ad5cfe2a7688b2ca2ca87f0b2a8e65bb3f1b3f296dd3f.png",
+                "alt": "Choose a web source and prepare images for import.",
+                "caption": "Choose a web source and prepare images for import.",
+                "width": 1640,
+                "height": 1051
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "seedvr2",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Faithful image restoration with SeedVR2, including high-resolution tiling, model preparation, settings and independent finishing. No Klein Improve or other LDS plug-in required.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Restore dataset images",
+                  "path": "/datasets?section=images"
+                },
+                {
+                  "label": "Restore Bank images",
+                  "path": "/bank"
+                },
+                {
+                  "label": "Open settings",
+                  "path": "/plugins/seedvr2/settings?focus=seedvr2-engine"
+                }
+              ],
+              "setup": {
+                "label": "Prepare SeedVR2",
+                "path": "/plugins/seedvr2/settings"
+              },
+              "setup_hint": "Connect a compatible ComfyUI Windows portable, then prepare the SeedVR2 node pack and its two model files together. Restart ComfyUI when idle and re-check readiness. Existing packages are preserved; TTP tiling remains optional. No other LDS plugin is required.",
+              "surfaces": [
+                "Bank",
+                "Dataset",
+                "Gallery",
+                "Canvas",
+                "Upscale settings",
+                "Upscale setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#seedvr2-upscaling-local"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0"
+            },
+            "id": "seedvr2",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "SeedVR2",
+            "node_packs": [
+              {
+                "classes": [
+                  "SeedVR2LoadDiTModel",
+                  "SeedVR2LoadVAEModel",
+                  "SeedVR2VideoUpscaler"
+                ],
+                "installation": {
+                  "action": "seedvr2_nodes",
+                  "archive_prefix": "ComfyUI-SeedVR2_VideoUpscaler-4490bd1f482e026674543386bb2a4d176da245b9",
+                  "folder": "seedvr2_videoupscaler",
+                  "id": "seedvr2",
+                  "python": ">=3.12",
+                  "requirements": [
+                    "torch==2.14.0",
+                    "torchvision==0.29.0",
+                    "safetensors==0.8.0",
+                    "numpy==2.5.2",
+                    "tqdm==4.70.1",
+                    "psutil==7.2.2",
+                    "einops==0.8.2",
+                    "omegaconf==2.3.1",
+                    "diffusers==0.40.0",
+                    "peft==0.20.0",
+                    "rotary-embedding-torch==0.9.1",
+                    "opencv-python==5.0.0.93",
+                    "gguf==0.19.0",
+                    "matplotlib==3.11.2",
+                    "antlr4-python3-runtime==4.9.3"
+                  ],
+                  "sha256": "04c61842bc00fd8673e6bc9a3b1b1935955461f363791070ed14d67d2a2e77fb",
+                  "url": "https://codeload.github.com/numz/ComfyUI-SeedVR2_VideoUpscaler/zip/4490bd1f482e026674543386bb2a4d176da245b9",
+                  "version": "2.5.24-lds.1",
+                  "wheelhouse": "resources/wheels",
+                  "wheels": [
+                    {
+                      "filename": "antlr4_python3_runtime-4.9.3+lds.1-py3-none-any.whl",
+                      "sha256": "4e909ac01d54970b10622e90c2645dad8b186d4d79b5864fa60bb155379173ef"
+                    }
+                  ]
+                },
+                "pack": "SeedVR2",
+                "search": "SeedVR2",
+                "url": "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
+              }
+            ],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "seedvr2"
+              ],
+              "engines": [
+                "seedvr2"
+              ],
+              "help_topics": [
+                "action-seedvr2-restore",
+                "seedvr2.finish_sharpen",
+                "seedvr2.finish_grain",
+                "seedvr2.finish_grain_saturation",
+                "seedvr2.tiling",
+                "seedvr2.tile_px",
+                "seedvr2.tile_threshold",
+                "seedvr2.vae",
+                "setup-seedvr2-install",
+                "seedvr2.default_engine"
+              ],
+              "install_actions": [
+                "seedvr2_nodes",
+                "seedvr2_model",
+                "seedvr2_vae"
+              ],
+              "install_groups": [
+                "seedvr2"
+              ],
+              "model_slots": [],
+              "probes": [
+                "comfyui.seedvr2_missing",
+                "comfyui.seedvr2_invalid",
+                "comfyui.seedvr2_nodes_missing",
+                "comfyui.seedvr2_nodes_installed",
+                "comfyui.seedvr2_ready",
+                "comfyui.seedvr2_tiling_ready",
+                "comfyui.seedvr2_tiling_nodes_missing",
+                "comfyui.seedvr2_ceiling_mp"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-10-seedvr2-node-discovery-retry",
+                "2026-09-10-seedvr2-overlapping-tile-joins",
+                "2026-09-10-seedvr2-complete-tiles-and-finishing",
+                "2026-09-07-seedvr2-standalone",
+                "2026-08-03-seedvr2-tile-and-vae-settings",
+                "2026-08-03-seedvr2-tiling-is-a-choice",
+                "2026-08-03-seedvr2-tiled-highres",
+                "2026-08-02-seedvr2-in-the-lightbox",
+                "2026-08-02-seedvr2-results-come-back",
+                "2026-08-02-seedvr2-upscaling",
+                "2026-08-04-seedvr2-settings-say-which-lane-your-target-takes"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "filesystem",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_seedvr2",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.6"
+          },
+          "manifest_sha256": "95a350958ba8adc8ef059b691b0c5491defef49d8d12683b77b167abfad56571",
+          "target": "plugins/seedvr2/1.0.6.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/seedvr2/1.0.6/0f37cd404344467ad0587c21eda4983b86bd1a2c8de0abff0de4b64c99a12e2f.png",
+                "alt": "Prepare SeedVR2 and choose its restoration models independently of Klein Improve.",
+                "caption": "Prepare SeedVR2 and choose its restoration models independently of Klein Improve.",
+                "width": 1440,
+                "height": 1000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.16",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Video Bank, clip curation, video training sets, local and cloud training, and the local H3 Test Studio with manual continuation, interpolation and DLSS 5. Live is a separate plugin.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Video Bank",
+                  "path": "/video-bank"
+                },
+                {
+                  "label": "Open Test Studio",
+                  "path": "/studio"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/video/settings"
+              },
+              "setup_hint": "Decoding, analysis and generation have separate prerequisites. Setup reports what is available for each function.",
+              "surfaces": [
+                "Video Bank",
+                "Video datasets",
+                "Video Test Studio",
+                "Video settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#the-video-bank-turn-a-folder-of-rushes-into-shots",
+                "using-the-app#triage-a-video-bank-from-the-keyboard",
+                "using-the-app#measure-your-shots-and-choose-your-own-cuts",
+                "using-the-app#retouch-a-cut-trim-split-or-draw-a-shot-by-hand",
+                "using-the-app#change-how-often-a-rush-gets-cut",
+                "using-the-app#find-scenes-in-a-video-bank-by-typing-a-word",
+                "using-the-app#describe-your-shots-and-search-what-happens-in-them",
+                "using-the-app#video-training-sets-and-the-two-things-to-check-before-you-cut-one",
+                "using-the-app#work-on-a-video-training-set",
+                "using-the-app#neural-render-for-video-clips",
+                "using-the-app#test-a-video-lora-before-you-trust-it",
+                "using-the-app#continue-a-clip-from-its-last-frame",
+                "using-the-app#smooth-pick-the-rate-before-it-runs"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0"
+            },
+            "id": "video",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Video lane",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "video",
+                "shot_detect",
+                "video_caption",
+                "video_bank"
+              ],
+              "engines": [],
+              "help_topics": [
+                "page-video-bank",
+                "page-video-dataset",
+                "page-video-studio",
+                "video-acceleration",
+                "video-continue",
+                "video-batch-prompt",
+                "video-smooth-rate",
+                "video-studio-start-frame",
+                "video-studio-motion-writer",
+                "video-studio-quick-prompts",
+                "video-bank-passes",
+                "video-burst-triage",
+                "video-quality-cuts",
+                "video-trim-split",
+                "video-shot-threshold",
+                "video-single-shot",
+                "video-transition-kind",
+                "video-captions",
+                "video-caption-wording",
+                "video-audio-cuts",
+                "video-source-cap",
+                "video-edge-trim",
+                "video-duplicate-shots",
+                "video-watermark-flag",
+                "video-safe-zone",
+                "video-defect-sweep",
+                "video-ai-check",
+                "video-camera-motion",
+                "video-temporal-coherence",
+                "video-flag-chips",
+                "video-bank-search",
+                "video-capability-pieces",
+                "video-datasets",
+                "video-dataset-clips",
+                "video-dataset-captions",
+                "video-dataset-references",
+                "video-dataset-training",
+                "video-dataset-checkpoints",
+                "video-dataset-studio",
+                "video-train-local",
+                "video-promote-target",
+                "setup-video-studio",
+                "video-neural-render",
+                "setup-dlss5-install"
+              ],
+              "install_actions": [
+                "video",
+                "video_host",
+                "shot_detect",
+                "dlss5nr_bridge",
+                "h3_base",
+                "h3_text_encoder",
+                "h3_video_vae",
+                "h3_audio_vae",
+                "h3_turbo_lora",
+                "h3_parasyte_lora",
+                "h3_dareties_lora"
+              ],
+              "install_groups": [],
+              "job_kinds": [
+                "is_video_test"
+              ],
+              "model_slots": [],
+              "probes": [
+                "video",
+                "video_detail",
+                "video_decode",
+                "video_detect",
+                "video_encode",
+                "video_host_ready",
+                "comfyui.video_studio_missing",
+                "comfyui.video_studio_ready",
+                "comfyui.video_studio_options",
+                "comfyui.video_studio_sage",
+                "dlss5nr"
+              ],
+              "tables": [
+                "video_bank",
+                "video_source",
+                "video_clip",
+                "video_dataset",
+                "video_dataset_clip",
+                "video_test_clip"
+              ],
+              "whats_new_ids": [
+                "2026-09-06-zzzz-video-prompt-survives-reload",
+                "2026-09-03-video-test-studio-prompts-per-picture",
+                "2026-09-03-video-test-studio-continue-from-last-frame",
+                "2026-09-03-video-accelerations",
+                "2026-09-03-video-run-graph-and-previews",
+                "2026-09-03-video-smooth-rate",
+                "2026-09-03-video-quick-prompts",
+                "2026-09-03-compare-export",
+                "2026-09-03-video-studio-render-time",
+                "2026-09-02-video-studio-start-frame-batch",
+                "2026-09-02-video-studio-fast-disk",
+                "2026-09-02-video-neural-render",
+                "2026-09-02-video-studio-preview-size",
+                "2026-09-02-video-studio-active-state-painted",
+                "2026-09-02-video-studio-dataset-clip-posters",
+                "2026-09-02-video-checkpoints-and-loras",
+                "2026-09-01-video-dataset-workspace",
+                "2026-09-01-remove-a-clip-from-a-video-set",
+                "2026-09-02-start-frame-clip-tab-fixed",
+                "2026-09-01-motion-auto-instructed",
+                "2026-09-01-motion-auto-and-enrich",
+                "2026-09-01-video-studio-smooth-vfi",
+                "2026-09-01-reuse-brings-the-start-frame-back",
+                "2026-09-01-video-studio-length-to-15s",
+                "2026-09-01-video-studio-steps-dial",
+                "2026-09-01-start-frame-from-the-gallery",
+                "2026-09-01-video-prep-in-one-button",
+                "2026-09-01-slice-long-shots",
+                "2026-09-01-max-shot-length-cut",
+                "2026-09-01-clip-length-suggestion",
+                "2026-09-01-video-bank-wears-the-bank-shell",
+                "2026-09-01-video-captions-follow-what-you-installed",
+                "2026-09-01-video-captions-fit-the-encoder",
+                "2026-09-01-video-captions-work-under-transformers-5",
+                "2026-08-31-video-test-studio",
+                "2026-08-30-delete-video-runs",
+                "2026-08-30-caption-budget-and-audio",
+                "2026-08-30-sota-video-captions",
+                "2026-08-30-pass-info-dots",
+                "2026-08-30-describe-shots-window",
+                "2026-08-30-video-triage-exits",
+                "2026-08-30-promote-window-knows-the-numbers",
+                "2026-08-30-h3-ref2va-training",
+                "2026-08-30-video-trigger-word",
+                "2026-08-30-h3-i2v-training",
+                "2026-08-30-h3-stills-training",
+                "2026-08-30-video-steps-sized-to-the-dataset",
+                "2026-08-30-h3-trains-the-way-h3-is-trained",
+                "2026-08-19-video-burst-triage",
+                "2026-08-19-video-temporal-coherence",
+                "2026-08-19-video-camera-motion",
+                "2026-08-19-video-ai-check",
+                "2026-08-18-video-defect-sweep",
+                "2026-08-18-video-safe-zone",
+                "2026-08-18-scrape-videos-into-a-video-bank",
+                "2026-08-18-video-look-score",
+                "2026-08-08-shot-threshold-recut",
+                "2026-08-08-single-shot-file",
+                "2026-08-08-min-shot-seconds",
+                "2026-08-07-video-install-checks-the-encoder",
+                "2026-08-06-setup-counts-the-video-pieces",
+                "2026-08-06-shot-detection-installs-its-decoder",
+                "2026-08-06-video-extras-installable-from-setup",
+                "2026-08-06-video-watermark-flag",
+                "2026-08-06-video-duplicate-shots",
+                "2026-08-06-video-flag-chips",
+                "2026-08-04-video-minimum-length",
+                "2026-08-04-video-train-local",
+                "2026-08-04-video-cloud-training",
+                "2026-08-04-video-caption-wording",
+                "2026-08-04-video-caption-model-choice",
+                "2026-08-04-video-describe-shots",
+                "2026-08-04-video-source-cap-knob",
+                "2026-08-04-video-edge-trim",
+                "2026-08-04-video-audio-metrics",
+                "2026-08-04-video-find-scenes",
+                "2026-08-04-video-clip-retouch",
+                "2026-08-04-video-quality-flags",
+                "2026-08-04-video-bank"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "gpu",
+              "filesystem",
+              "network",
+              "secrets:VAST_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_video",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.0"
+          },
+          "manifest_sha256": "779f614ad6d7b31f7064380455cf127f34cac48adf04361f4525429c6207ecb5",
+          "target": "plugins/video/1.0.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/video/1.0.0/992fc9ebd6d0f3ebda846d66764ae9666de4b4a370c26b2c3db8b82556834865.png",
+                "alt": "Compare a source clip with its neural render side by side.",
+                "caption": "Compare a source clip with its neural render side by side.",
+                "width": 1100,
+                "height": 888
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
