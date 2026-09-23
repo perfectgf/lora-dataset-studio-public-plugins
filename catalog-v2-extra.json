@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "products": [
+    {
+      "id": "qwen_dataset",
+      "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.23",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Generate dataset variations locally with Qwen-Image 2.1. Use one to ten identity references, choose your shots and curate each result in your dataset. Includes model preparation and generation settings.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open datasets",
+                  "path": "/datasets?section=images"
+                }
+              ],
+              "setup": {
+                "label": "Prepare Dataset Forge",
+                "path": "/plugins/qwen_dataset/settings"
+              },
+              "setup_hint": "Requires a configured, recent ComfyUI and Qwen-Image 2.1 weights. Prepare missing models here. Weights use the Qwen Research License for noncommercial research and evaluation.",
+              "surfaces": [
+                "Dataset variations",
+                "Dataset Forge settings",
+                "Model preparation"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#dataset-forge-qwen-image-2-1"
+              ]
+            },
+            "host_dependencies": {},
+            "id": "qwen_dataset",
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Dataset Forge",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "plugins.qwen_dataset"
+              ],
+              "engines": [
+                "qwen_dataset"
+              ],
+              "help_topics": [
+                "qwen-dataset-prepare",
+                "qwen-dataset-steps",
+                "qwen-dataset-cfg",
+                "qwen-dataset-reference-resolution",
+                "qwen-dataset-negative-prompt",
+                "qwen-dataset-unet",
+                "qwen-dataset-text-encoder",
+                "qwen-dataset-vae",
+                "qwen-dataset-sampler",
+                "qwen-dataset-scheduler"
+              ],
+              "install_actions": [
+                "qwen_dataset_model",
+                "qwen_dataset_text_encoder",
+                "qwen_dataset_vae"
+              ],
+              "install_groups": [
+                "qwen_dataset"
+              ],
+              "job_kinds": [],
+              "model_slots": [
+                "qwen_dataset_model",
+                "qwen_dataset_text_encoder",
+                "qwen_dataset_vae"
+              ],
+              "probes": [
+                "qwen_dataset",
+                "comfyui.qwen_dataset_missing",
+                "comfyui.qwen_dataset_invalid",
+                "comfyui.qwen_dataset_ready"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-23-qwen-dataset-forge"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "datasets:write",
+              "filesystem",
+              "gpu",
+              "network"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_qwen_dataset",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.0"
+          },
+          "manifest_sha256": "58ac748baf3e711a0c91c4ced4899f1ff864ce9b016887c25a6712c628317da6",
+          "target": "plugins/qwen_dataset/1.0.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "changelog": [
+            "Generate dataset variations locally with Qwen-Image 2.1 from up to ten reference photos. Includes model preparation, sampling settings and dataset regeneration. Requires the updated LDS core (plugin API 1.23); model weights use the Qwen Research License."
+          ]
+        }
+      ]
+    }
+  ]
+}

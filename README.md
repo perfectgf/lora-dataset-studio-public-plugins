@@ -1,10 +1,12 @@
 # LDS public plugin catalog
 
-Signed distribution files for the 13 free public plugins in [LoRA Dataset Studio V2](https://github.com/perfectgf/lora-dataset-studio/tree/v2).
+Signed distribution files for the 14 free public plugins in [LoRA Dataset Studio V2](https://github.com/perfectgf/lora-dataset-studio/tree/v2).
 
 Install plugins from LDS → Plugins. This repository hosts the catalog, screenshots and immutable `.ldsplugin` archives used by the app. It is not a launcher or a separate app. Source and contributor documentation are in the LDS repository.
 
 The app verifies TUF metadata against its pinned public bootstrap root, then verifies each downloaded archive's signed size and digest. Files are served directly from this repository's `main` branch under `public/`. The top-level `catalog.json` is an operator reference; the client consumes the authenticated catalog target.
+
+The original 13 products remain in `catalog.json` so older LDS versions continue to receive their updates. Dataset Forge (Qwen-Image 2.1) is in the separately signed `catalog-v2-extra.json` target, enabled by the updated LDS core with plugin API 1.23. Both catalogs share the same trust root and renewal schedule. Publications must retain both signed catalogs and all their referenced targets.
 
 `renew.py` only renews the already signed target set. It verifies root thresholds, all role signatures, metadata references and every target's bytes before signing. It never reads a new catalog or publishes new plugins. Target metadata expires after 30 days, snapshots after 7 days and timestamps after 3 days. GitHub Actions renews them every six hours and also supports manual dispatch. If scheduling stops, clients eventually refuse stale updates; existing installed plugins remain available. Check failed workflow runs promptly, since GitHub can delay or disable scheduled workflows.
 
