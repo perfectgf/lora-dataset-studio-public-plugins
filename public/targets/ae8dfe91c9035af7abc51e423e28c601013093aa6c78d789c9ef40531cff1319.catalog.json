@@ -4,6 +4,11 @@
       "id": "api_engines",
       "releases": [
         {
+          "changelog": [
+            "Choose from the models available to your connected ChatGPT subscription, with automatic account recommendations or a saved manual choice.",
+            "Replace the retired gpt-5.4-mini default automatically and stop rejected-model batches with the provider reason. No paid API-key fallback.",
+            "The subscription selects its own GPT Image renderer version; the API-key model setting does not apply."
+          ],
           "manifest": {
             "api": 1,
             "author": "lora-dataset-studio",
@@ -24,7 +29,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -131,10 +136,6 @@
             "version": "1.2.0"
           },
           "manifest_sha256": "53cd6c2ae46e002209e1a5f43f987727cb8928b6663dabce3bb7c548ef9d5981",
-          "target": "plugins/api_engines/1.2.0.ldsplugin",
-          "price": {
-            "kind": "free"
-          },
           "presentation": {
             "images": [
               {
@@ -148,11 +149,10 @@
             ],
             "schema_version": 1
           },
-          "changelog": [
-            "Choose from the models available to your connected ChatGPT subscription, with automatic account recommendations or a saved manual choice.",
-            "Replace the retired gpt-5.4-mini default automatically and stop rejected-model batches with the provider reason. No paid API-key fallback.",
-            "The subscription selects its own GPT Image renderer version; the API-key model setting does not apply."
-          ]
+          "price": {
+            "kind": "free"
+          },
+          "target": "plugins/api_engines/1.2.0.ldsplugin"
         },
         {
           "changelog": [
@@ -180,7 +180,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -328,7 +328,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -475,7 +475,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -626,7 +626,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Re-shoot a picture from other camera positions with Qwen-Image-Edit and the Multiple-Angles LoRA — the subject stays put, the backdrop moves with the camera. On Gallery images and dataset images; the views land next to their source.",
+            "description": "Re-shoot a picture from other camera positions with Qwen-Image-Edit and the Multiple-Angles LoRA \u2014 the subject stays put, the backdrop moves with the camera. On Gallery images and dataset images; the views land next to their source.",
             "experience": {
               "entrypoints": [
                 {
@@ -1293,7 +1293,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Publish a trained checkpoint as a Civitai model page and post the images it generated under that page, without leaving the app — from a checkpoint's popover (run graph, LoRA Canvas) and from the image viewer. Uses the Civitai API key the scraper and the prompt browser already share.",
+            "description": "Publish a trained checkpoint as a Civitai model page and post the images it generated under that page, without leaving the app \u2014 from a checkpoint's popover (run graph, LoRA Canvas) and from the image viewer. Uses the Civitai API key the scraper and the prompt browser already share.",
             "experience": {
               "entrypoints": [
                 {
@@ -2765,7 +2765,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Export a dataset to the Hugging Face Hub as a dataset repo — the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card — from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
+            "description": "Export a dataset to the Hugging Face Hub as a dataset repo \u2014 the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card \u2014 from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
             "experience": {
               "entrypoints": [
                 {
@@ -3203,7 +3203,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model — pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in’s settings.",
+            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model \u2014 pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in\u2019s settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -3339,7 +3339,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model — pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in’s settings.",
+            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model \u2014 pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in\u2019s settings.",
             "experience": {
               "entrypoints": [
                 {
