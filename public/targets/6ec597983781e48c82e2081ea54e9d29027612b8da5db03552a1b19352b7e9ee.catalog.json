@@ -29,7 +29,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -180,7 +180,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -328,7 +328,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -475,7 +475,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset images with the cloud engines — Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins ▸ API image engines ▸ Settings.",
+            "description": "Generate dataset images with the cloud engines \u2014 Nano Banana (Gemini), ChatGPT (gpt-image, by API key or a ChatGPT subscription) and OpenRouter. Pay-per-image; each needs its own key in Plugins \u25b8 API image engines \u25b8 Settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -626,7 +626,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Re-shoot a picture from other camera positions with Qwen-Image-Edit and the Multiple-Angles LoRA — the subject stays put, the backdrop moves with the camera. On Gallery images and dataset images; the views land next to their source.",
+            "description": "Re-shoot a picture from other camera positions with Qwen-Image-Edit and the Multiple-Angles LoRA \u2014 the subject stays put, the backdrop moves with the camera. On Gallery images and dataset images; the views land next to their source.",
             "experience": {
               "entrypoints": [
                 {
@@ -1293,7 +1293,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Publish a trained checkpoint as a Civitai model page and post the images it generated under that page, without leaving the app — from a checkpoint's popover (run graph, LoRA Canvas) and from the image viewer. Uses the Civitai API key the scraper and the prompt browser already share.",
+            "description": "Publish a trained checkpoint as a Civitai model page and post the images it generated under that page, without leaving the app \u2014 from a checkpoint's popover (run graph, LoRA Canvas) and from the image viewer. Uses the Civitai API key the scraper and the prompt browser already share.",
             "experience": {
               "entrypoints": [
                 {
@@ -2765,7 +2765,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Export a dataset to the Hugging Face Hub as a dataset repo — the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card — from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
+            "description": "Export a dataset to the Hugging Face Hub as a dataset repo \u2014 the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card \u2014 from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
             "experience": {
               "entrypoints": [
                 {
@@ -3203,7 +3203,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model — pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in’s settings.",
+            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model \u2014 pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in\u2019s settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -3339,7 +3339,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model — pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in’s settings.",
+            "description": "Quantize a full-precision model to the fp8 file ComfyUI loads, and merge one or more LoRAs into a base checkpoint to get a complete model \u2014 pure file-in / file-out work on this machine, no GPU or training environment needed. Doors in the dataset's Checkpoints & LoRAs panel, on each delivered full model, under the full-model recipe, and in this plug-in\u2019s settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -4359,6 +4359,10 @@
       "id": "video",
       "releases": [
         {
+          "changelog": [
+            "Prepare the official optimized 2.81 GB H3 INT8 video VAE from the Render panel.",
+            "Update LDS first: preparation detects the previous experimental file and replaces it only after the new download passes its size and SHA-256 checks."
+          ],
           "manifest": {
             "api": 1,
             "author": "lora-dataset-studio",
@@ -4743,15 +4747,6 @@
             "version": "1.3.15"
           },
           "manifest_sha256": "848cf046b847409512d8ba976361b628957cfcd0da65063a63e87b3ae630d767",
-          "target": "plugins/video/1.3.15.ldsplugin",
-          "price": {
-            "kind": "free"
-          },
-          "published_at": "2026-09-23T21:34:16.591234Z",
-          "changelog": [
-            "Prepare the official optimized 2.81 GB H3 INT8 video VAE from the Render panel.",
-            "Update LDS first: preparation detects the previous experimental file and replaces it only after the new download passes its size and SHA-256 checks."
-          ],
           "presentation": {
             "images": [
               {
@@ -4764,7 +4759,12 @@
               }
             ],
             "schema_version": 1
-          }
+          },
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-09-23T21:34:16.591234Z",
+          "target": "plugins/video/1.3.15.ldsplugin"
         },
         {
           "changelog": [
