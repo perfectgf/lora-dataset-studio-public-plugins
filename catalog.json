@@ -1417,6 +1417,130 @@
       "id": "civitai_publish",
       "releases": [
         {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.12",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.9.4",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Publish a trained checkpoint as a Civitai model page and post the images it generated under that page, without leaving the app — from a checkpoint's popover (run graph, LoRA Canvas) and from the image viewer. Uses the Civitai API key the scraper and the prompt browser already share.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open checkpoints",
+                  "path": "/datasets?section=checkpoints"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/civitai_publish/settings"
+              },
+              "setup_hint": "Connect your Civitai API key. Publication starts from a dataset checkpoint or model.",
+              "surfaces": [
+                "Dataset checkpoints",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-lora-and-its-images-to-civitai",
+                "settings-reference#civitai-publishing"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0",
+              "requests": "==2.34.2"
+            },
+            "id": "civitai_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Civitai",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "civitai"
+              ],
+              "engines": [],
+              "help_topics": [
+                "civitai-publish",
+                "civitai.link_host"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "civitai"
+              ],
+              "tables": [
+                "civitai_link"
+              ],
+              "whats_new_ids": [
+                "2026-10-17-civitai-post-generation-model",
+                "2026-09-02-publish-to-civitai"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:CIVITAI_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_civitai_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.1"
+          },
+          "manifest_sha256": "16460357e0b4de0be05300eaace3b6ee8535b86a1a0f68f37725afaa5f27b75b",
+          "target": "plugins/civitai_publish/1.0.1.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-10-17T10:01:27.679149Z",
+          "changelog": [
+            "A posted picture also tags the model it was generated with when Civitai hosts that file, so it appears in that model's gallery too. The file is identified once by its hash.",
+            "New option before posting: hide the prompt and generation data, like Civitai's own hide toggle."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Prepare an image post linked to a Civitai model.",
+                "caption": "Prepare an image post linked to a Civitai model.",
+                "height": 800,
+                "id": "overview",
+                "target": "media/civitai_publish/1.0.1/239151d3470e89da96a874cb538d12c7052ef9f258cd0cac93f630b6109bcb39.png",
+                "width": 1280
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
           "changelog": [
             "Public V2 edition. Install and manage this plugin from LDS Plugins."
           ],
