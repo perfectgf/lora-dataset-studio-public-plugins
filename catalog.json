@@ -1796,7 +1796,7 @@
             "author": "lora-dataset-studio",
             "bundled": false,
             "compatibility": {
-              "api": "<2,>=1.17",
+              "api": "<2,>=1.27",
               "arch": [
                 "x86_64",
                 "arm64"
@@ -1962,14 +1962,14 @@
             "python_package": "lds_cloud_training",
             "requires": [],
             "schema_version": 2,
-            "version": "1.0.9"
+            "version": "1.0.10"
           },
-          "manifest_sha256": "9c3d02d8f55157c7ece7f11bb6f95c3514eafc1b8b6ce24e958279778de85ac1",
-          "target": "plugins/cloud_training/1.0.9.ldsplugin",
+          "manifest_sha256": "632be9d1d98d6c4887bd339271e0bdde018d6dabaf7d88d67684dd72a73821c9",
+          "target": "plugins/cloud_training/1.0.10.ldsplugin",
           "price": {
             "kind": "free"
           },
-          "published_at": "2026-10-18T14:47:14.660405Z",
+          "published_at": "2026-10-19T03:59:34.846909Z",
           "changelog": [
             "Train MOSS-Image LoRAs in the cloud on the official MOSS-Image Base. Runs use a pinned AI Toolkit pod image on an Ampere or newer GPU with a 100 GB disk; no cost estimate is shown yet."
           ],
@@ -1980,7 +1980,7 @@
                 "caption": "Compare GPU speed and estimated cost before starting a cloud run.",
                 "height": 629,
                 "id": "overview",
-                "target": "media/cloud_training/1.0.9/1e4fb0339e224d2e76ea3478c5ebf205a87dc13dfd934c1e70cfb46a1bab3694.png",
+                "target": "media/cloud_training/1.0.10/1e4fb0339e224d2e76ea3478c5ebf205a87dc13dfd934c1e70cfb46a1bab3694.png",
                 "width": 538
               }
             ],
