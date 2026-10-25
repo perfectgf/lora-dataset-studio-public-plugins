@@ -1512,6 +1512,143 @@
                 "2026-09-09-civitai-publish-settings-recovery",
                 "2026-10-17-civitai-picture-lora-page",
                 "2026-10-17-civitai-post-generation-model",
+                "2026-10-24-civitai-lora-composer",
+                "2026-10-25-civitai-trained-lora-choice"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:CIVITAI_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_civitai_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.2.0"
+          },
+          "manifest_sha256": "a601fc1ce55c0b7f386655e19c1b2be352e1f0ad0232e54b987f45c48ed40b18",
+          "target": "plugins/civitai_publish/1.2.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-10-25T11:43:11.707748Z",
+          "changelog": [
+            "Choose a LoRA trained in LDS directly in Publish LoRA: its dataset, run and save, the final save included. The draft page is prefilled from the training run, as from a checkpoint Civitai action. Available with LDS members 2026.10.23.3 or later."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Prepare an image post linked to a Civitai model.",
+                "caption": "Prepare an image post linked to a Civitai model.",
+                "height": 800,
+                "id": "overview",
+                "target": "media/civitai_publish/1.2.0/239151d3470e89da96a874cb538d12c7052ef9f258cd0cac93f630b6109bcb39.png",
+                "width": 1280
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.21",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.10.23.3",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Prepare a complete Civitai LoRA draft from an imported safetensors file or a trained checkpoint, with an editable model page and example images. Also link existing pages and post generated images. Requires your Civitai API key.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Publish LoRA",
+                  "path": "/civitai-publish"
+                },
+                {
+                  "label": "Open checkpoints",
+                  "path": "/datasets?section=checkpoints"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/civitai_publish/settings"
+              },
+              "setup_hint": "Connect your Civitai API key, then import a LoRA or prepare a trained checkpoint with example images.",
+              "surfaces": [
+                "Dataset checkpoints",
+                "Video checkpoints",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-lora-and-its-images-to-civitai",
+                "using-the-app#share-a-video-checkpoint-on-civitai",
+                "settings-reference#civitai-publishing",
+                "using-the-app#prepare-a-complete-civitai-lora-draft"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0",
+              "requests": "==2.34.2"
+            },
+            "id": "civitai_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Civitai",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "civitai"
+              ],
+              "engines": [],
+              "help_topics": [
+                "civitai-publish",
+                "civitai.link_host",
+                "civitai.video-publish",
+                "civitai.lora-composer"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "civitai"
+              ],
+              "tables": [
+                "civitai_link",
+                "video_civitai_link"
+              ],
+              "whats_new_ids": [
+                "2026-09-02-publish-to-civitai",
+                "2026-09-09-civitai-publish-settings-recovery",
+                "2026-10-17-civitai-picture-lora-page",
+                "2026-10-17-civitai-post-generation-model",
                 "2026-10-24-civitai-lora-composer"
               ]
             },
