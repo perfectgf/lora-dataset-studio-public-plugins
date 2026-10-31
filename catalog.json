@@ -1427,6 +1427,148 @@
                 "x86_64",
                 "arm64"
               ],
+              "lds": ">=2026.10.31.1",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Prepare a complete Civitai LoRA draft from an imported safetensors file or a trained checkpoint, with an editable model page and example images. Also link existing pages and post generated images. Requires your Civitai API key.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Publish LoRA",
+                  "path": "/civitai-publish"
+                },
+                {
+                  "label": "Open checkpoints",
+                  "path": "/datasets?section=checkpoints"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/civitai_publish/settings"
+              },
+              "setup_hint": "Connect your Civitai API key, then import a LoRA or prepare a trained checkpoint with example images.",
+              "surfaces": [
+                "Dataset checkpoints",
+                "Video checkpoints",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-lora-and-its-images-to-civitai",
+                "using-the-app#share-a-video-checkpoint-on-civitai",
+                "settings-reference#civitai-publishing",
+                "using-the-app#prepare-a-complete-civitai-lora-draft"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0",
+              "requests": "==2.34.2"
+            },
+            "id": "civitai_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Civitai",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "civitai"
+              ],
+              "engines": [],
+              "help_topics": [
+                "civitai-publish",
+                "civitai.link_host",
+                "civitai.video-publish",
+                "civitai.lora-composer"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "civitai"
+              ],
+              "tables": [
+                "civitai_link",
+                "video_civitai_link"
+              ],
+              "whats_new_ids": [
+                "2026-09-02-publish-to-civitai",
+                "2026-09-09-civitai-publish-settings-recovery",
+                "2026-10-17-civitai-picture-lora-page",
+                "2026-10-17-civitai-post-generation-model",
+                "2026-10-24-civitai-lora-composer",
+                "2026-10-25-civitai-trained-lora-choice",
+                "2026-10-25-civitai-gallery-examples",
+                "2026-10-25-civitai-upload-resume"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:CIVITAI_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_civitai_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.3.4"
+          },
+          "manifest_sha256": "d9dcc9bfa7e014ab1334239ecfbd2af7fb457da34b96eec8cad26da05389a070",
+          "target": "plugins/civitai_publish/1.3.4.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-10-31T17:37:35.462539Z",
+          "changelog": [
+            "A missing Civitai API key now links directly to its setting from the publishing dialog.",
+            "Prepare a complete Civitai LoRA draft from a LoRA trained in LDS (dataset, run and save) or an imported file, with editable model details, license choices and example images. Available with LDS members 2026.10.30.1 or later.",
+            "Choose example images from the LDS gallery: the images generated with the draft training save, copied without metadata in the order you pick them.",
+            "Uploads retry after network failures, and a stopped upload resumes from where it stopped without sending anything twice to Civitai."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Prepare an image post linked to a Civitai model.",
+                "caption": "Prepare an image post linked to a Civitai model.",
+                "height": 800,
+                "id": "overview",
+                "target": "media/civitai_publish/1.3.4/239151d3470e89da96a874cb538d12c7052ef9f258cd0cac93f630b6109bcb39.png",
+                "width": 1280
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.27",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
               "lds": ">=2026.10.30.1",
               "os": [
                 "windows",
@@ -2072,6 +2214,205 @@
     {
       "id": "cloud_training",
       "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.27",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": "<2027,>=2026.10.31.1",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<3.15,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Train images and videos on rented GPUs, supervise runtime and recover checkpoints. Includes full-model delivery and Hub storage.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open training",
+                  "path": "/datasets?section=training"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/cloud_training/settings"
+              },
+              "setup_hint": "Configure a cloud provider to train images or videos. Cloud work can incur provider charges.",
+              "surfaces": [
+                "Dataset training",
+                "Video training",
+                "Run history",
+                "Cloud settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#compare-settings-with-two-runs-at-once",
+                "settings-reference#cloud-gpu-vast-ai",
+                "settings-reference#cloud-training",
+                "settings-reference#full-model-dense-recipe",
+                "settings-reference#cloud-run-housekeeping",
+                "settings-reference#hugging-face-storage",
+                "dataset-guide#10-full-model-recipe-what-you-can-change",
+                "settings-reference#cloud-training-configuration-keys"
+              ]
+            },
+            "host_dependencies": {
+              "filelock": "==3.32.5",
+              "flask": "==3.1.3",
+              "huggingface-hub": ">=0.24",
+              "requests": "==2.34.2"
+            },
+            "id": "cloud_training",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Cloud training",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "paths": [
+                  "cloud_runs_dir"
+                ]
+              },
+              "config_sections": [
+                "cloud"
+              ],
+              "engines": [],
+              "help_topics": [
+                "VAST_API_KEY",
+                "cloud.max_concurrent_runs",
+                "cloud.max_price_per_hour",
+                "cloud.monthly_budget_usd",
+                "cloud.stall_timeout_minutes",
+                "cloud.first_step_timeout_minutes",
+                "cloud.first_step_download_budget_minutes",
+                "cloud.max_runtime_minutes",
+                "cloud.freeze_watchdog_minutes",
+                "cloud.upload_stall_minutes",
+                "cloud.unreachable_grace_minutes",
+                "cloud.min_reliability",
+                "cloud.verified_only",
+                "cloud.secure_cloud_only",
+                "cloud.full_transformer.delivery",
+                "cloud.dense_fetch_local",
+                "cloud.full_transformer.private_storage_limit_gb",
+                "cloud.hf_storage",
+                "training.full_model_recipe",
+                "training.full_model_base",
+                "training.full_model_quality",
+                "training.full_model_fp8_export",
+                "paths.cloud_runs_dir",
+                "workspace-dense-models",
+                "parallel-cloud-runs",
+                "runs-clean-one-run-staging",
+                "storage-orphan-run-folders",
+                "video-cloud-training"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "cloud_training",
+                "vast"
+              ],
+              "tables": [
+                "cloud_training_run"
+              ],
+              "whats_new_ids": [
+                "2026-10-21-cloud-resume-upload",
+                "2026-10-18-cloud-moss-image",
+                "2026-09-26-cloud-video-rank",
+                "2026-09-23-cloud-video-sample-choice",
+                "2026-09-23-cloud-test-family",
+                "2026-09-23-cloud-rental-reliability",
+                "2026-09-23-cloud-qwen-image-21",
+                "2026-09-22-cloud-continue-gpu-choice",
+                "2026-09-05-zz-vast-referral-link",
+                "2026-09-02-video-cloud-launch-window",
+                "2026-08-30-video-cloud-gpu-picker",
+                "2026-08-29-video-lora-in-the-cloud",
+                "2026-08-17-vast-do-not-rent-this-machine-again",
+                "2026-08-07-parallel-cloud-runs",
+                "2026-08-04-full-model-run-no-longer-reads-as-gone",
+                "2026-08-04-full-model-lands-on-your-computer",
+                "2026-08-04-cloud-quantize-rents-a-machine-that-fits",
+                "2026-08-03-quantize-in-the-cloud-without-downloading",
+                "2026-08-03-hf-storage-precheck-and-cleanup",
+                "2026-08-03-restart-no-longer-kills-a-live-cloud-run",
+                "2026-08-02-cloud-launch-is-observable",
+                "2026-08-02-cloud-only-installs-see-their-checkpoints",
+                "2026-08-01-verified-cloud-token-stops-nagging",
+                "2026-07-28-cloud-boot-waits-for-a-pod-that-is-still-working",
+                "2026-07-28-cloud-watchdog-counts-a-downloading-pod-as-progress",
+                "2026-07-28-cloud-run-download-bytes-and-durable-freeze-clock",
+                "2026-07-28-busy-database-no-longer-strands-a-paid-cloud-run",
+                "2026-07-26-cloud-run-survives-a-busy-database",
+                "2026-07-26-cloud-run-survives-a-restart-after-submit",
+                "2026-07-26-cloud-checkpoint-rescue-is-never-cut-short",
+                "2026-07-26-cloud-stop-that-cannot-lie",
+                "2026-07-21-cloud-unreachable-grace",
+                "2026-07-17-slider-lora-cloud"
+              ]
+            },
+            "permissions": [
+              "network",
+              "secrets:VAST_API_KEY",
+              "secrets:HF_CLOUD_TOKEN",
+              "secrets:HF_TOKEN",
+              "filesystem",
+              "datasets:read",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_cloud_training",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.14"
+          },
+          "manifest_sha256": "832e678e64eb065336b2d47c47c2e69d2fb6951862f8525d970ca41ca87546d6",
+          "target": "plugins/cloud_training/1.0.14.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-10-31T17:37:35.462539Z",
+          "changelog": [
+            "Open the relevant token setting from cloud launch errors, and jump directly to the GPU price limit from the GPU picker.",
+            "Train MOSS-Image LoRAs in the cloud on the official MOSS-Image Base. Runs use a pinned AI Toolkit pod image on an Ampere or newer GPU with a 100 GB disk; no cost estimate is shown yet."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Compare GPU speed and estimated cost before starting a cloud run.",
+                "caption": "Compare GPU speed and estimated cost before starting a cloud run.",
+                "height": 629,
+                "id": "overview",
+                "target": "media/cloud_training/1.0.14/1e4fb0339e224d2e76ea3478c5ebf205a87dc13dfd934c1e70cfb46a1bab3694.png",
+                "width": 538
+              }
+            ],
+            "schema_version": 1
+          }
+        },
         {
           "manifest": {
             "api": 1,
@@ -4602,6 +4943,122 @@
     {
       "id": "hf_publish",
       "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.28",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.10.31.1",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Export a dataset to the Hugging Face Hub as a dataset repo — the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card — from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open dataset export",
+                  "path": "/datasets?section=export"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/hf_publish/settings"
+              },
+              "setup_hint": "Use a Hugging Face token with permission to write the destination repository.",
+              "surfaces": [
+                "Dataset export",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-dataset-to-hugging-face"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "hf_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Hugging Face",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "hf-publish",
+                "hf-publish-token"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "hf_publish"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-09-hf-style-dataset-card"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:HF_TOKEN"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_hf_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.6"
+          },
+          "manifest_sha256": "214662fe75fece6fe86a0ea9c8c71e42354dcbacf3f77dbff3b7ecce24308d39",
+          "target": "plugins/hf_publish/1.0.6.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-10-31T17:37:35.462539Z",
+          "changelog": [
+            "Hugging Face publishing errors now offer the relevant token setting and a link to create a token with write access.",
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Configure Hugging Face publishing access in the plugin settings.",
+                "caption": "Configure Hugging Face publishing access in the plugin settings.",
+                "height": 1000,
+                "id": "overview",
+                "target": "media/hf_publish/1.0.6/d0fa240bbb29070177734005a35e74edfedeebaf38236289d0291f1aedb90d39.png",
+                "width": 1440
+              }
+            ],
+            "schema_version": 1
+          }
+        },
         {
           "changelog": [
             "Public V2 edition. Install and manage this plugin from LDS Plugins."
