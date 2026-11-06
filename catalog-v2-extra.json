@@ -10,12 +10,12 @@
             "author": "lora-dataset-studio",
             "bundled": false,
             "compatibility": {
-              "api": "<2,>=1.27",
+              "api": "<2,>=1.23",
               "arch": [
                 "x86_64",
                 "arm64"
               ],
-              "lds": ">=2026.10.18.3",
+              "lds": "<2027,>=2026.11.06.1",
               "os": [
                 "windows",
                 "linux",
@@ -25,7 +25,7 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Generate dataset variations locally with Qwen-Image 2.1. Use one to ten identity references, choose your shots and curate each result in your dataset. Adds Qwen 2.1 and Qwen Turbo engines to the watermark clean of datasets and banks. Includes model preparation and generation settings.",
+            "description": "Generate dataset variations locally with Qwen-Image 2.1. Use one to ten identity references, choose your shots and curate each result in your dataset. Includes model preparation and generation settings.",
             "experience": {
               "entrypoints": [
                 {
@@ -37,10 +37,9 @@
                 "label": "Prepare Dataset Forge",
                 "path": "/plugins/qwen_dataset/settings"
               },
-              "setup_hint": "Requires a configured, recent ComfyUI and Qwen-Image 2.1 weights; the Qwen Turbo watermark engine also uses the Turbo weights. Prepare missing models here. Weights use the Qwen Research License for noncommercial research and evaluation.",
+              "setup_hint": "Requires a configured, recent ComfyUI and Qwen-Image 2.1 weights. Prepare missing models here. Weights use the Qwen Research License for noncommercial research and evaluation.",
               "surfaces": [
                 "Dataset variations",
-                "Watermark clean engines",
                 "Dataset Forge settings",
                 "Model preparation"
               ]
@@ -80,15 +79,12 @@
                 "qwen-dataset-text-encoder",
                 "qwen-dataset-vae",
                 "qwen-dataset-sampler",
-                "qwen-dataset-scheduler",
-                "qwen-dataset-turbo",
-                "qwen-dataset-watermark"
+                "qwen-dataset-scheduler"
               ],
               "install_actions": [
                 "qwen_dataset_model",
                 "qwen_dataset_text_encoder",
-                "qwen_dataset_vae",
-                "qwen_dataset_turbo_model"
+                "qwen_dataset_vae"
               ],
               "install_groups": [
                 "qwen_dataset"
@@ -97,8 +93,7 @@
               "model_slots": [
                 "qwen_dataset_model",
                 "qwen_dataset_text_encoder",
-                "qwen_dataset_vae",
-                "qwen_dataset_turbo_model"
+                "qwen_dataset_vae"
               ],
               "probes": [
                 "qwen_dataset",
@@ -108,7 +103,6 @@
               ],
               "tables": [],
               "whats_new_ids": [
-                "2026-10-18-qwen-dataset-watermark-engines",
                 "2026-09-23-qwen-dataset-forge"
               ]
             },
@@ -126,24 +120,23 @@
             "python_package": "lds_qwen_dataset",
             "requires": [],
             "schema_version": 2,
-            "version": "1.2.0"
+            "version": "1.3.0"
           },
-          "manifest_sha256": "cb837ca4970baaecf63d47670911382170113a6da3ac6a34d88a54b4cb9a76f2",
-          "target": "plugins/qwen_dataset/1.2.0.ldsplugin",
+          "manifest_sha256": "2a76fc69ad01aa6d0eb50ce9a0e103f13d37c30463f34e92d7507eff885b1301",
+          "target": "plugins/qwen_dataset/1.3.0.ldsplugin",
           "price": {
             "kind": "free"
           },
-          "published_at": "2026-10-18T21:21:10.263771Z",
+          "published_at": "2026-11-06T14:32:14.273851Z",
           "changelog": [
-            "Remove watermarks with Qwen-Image 2.1: the 🧽 watermark clean of datasets and banks gains two engines beside LaMa and Klein, Qwen 2.1 and Qwen Turbo. Each cleans the whole photo, marks on the subject included, and writes back only what it changed.",
-            "Qwen 2.1 is the more reliable and Turbo about twice as fast; Dataset Forge settings prepare the optional Turbo model."
+            "Maintenance release for LDS 2026.11.06.1 and later; dataset variations work as in 1.0.0."
           ],
           "presentation": {
             "schema_version": 1,
             "images": [
               {
                 "id": "overview",
-                "target": "media/qwen_dataset/1.2.0/e4434d2d7a19910e035b4baac2affdcff0159d7f524ac5c7ce4f6380a6b625a4.png",
+                "target": "media/qwen_dataset/1.3.0/e4434d2d7a19910e035b4baac2affdcff0159d7f524ac5c7ce4f6380a6b625a4.png",
                 "alt": "Qwen-Image 2.1 in Generate variations, with its model preparation shortcut.",
                 "caption": "Choose Qwen-Image 2.1 in Generate variations. Prepare its models from Dataset Forge settings.",
                 "width": 1280,
