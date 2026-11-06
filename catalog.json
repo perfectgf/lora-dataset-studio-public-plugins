@@ -1427,7 +1427,7 @@
                 "x86_64",
                 "arm64"
               ],
-              "lds": ">=2026.11.03.1",
+              "lds": "<2027,>=2026.11.06.1",
               "os": [
                 "windows",
                 "linux",
@@ -1437,13 +1437,9 @@
             },
             "data_schema": 1,
             "dependency_versions": {},
-            "description": "Prepare a complete Civitai LoRA draft from an imported safetensors file or a trained checkpoint, with an editable model page and example images. Also link existing pages and post generated images. Requires your Civitai API key.",
+            "description": "Publish a trained checkpoint as a Civitai model page, or link the page it already has, and post generated images under it with their prompt, seed and settings, from a checkpoint's popover and from the image viewer. Requires your Civitai API key.",
             "experience": {
               "entrypoints": [
-                {
-                  "label": "Publish LoRA",
-                  "path": "/civitai-publish"
-                },
                 {
                   "label": "Open checkpoints",
                   "path": "/datasets?section=checkpoints"
@@ -1453,10 +1449,9 @@
                 "label": "Configure",
                 "path": "/plugins/civitai_publish/settings"
               },
-              "setup_hint": "Connect your Civitai API key, then import a LoRA or prepare a trained checkpoint with example images.",
+              "setup_hint": "Connect your Civitai API key, then publish a trained checkpoint or post a generated image from the image viewer.",
               "surfaces": [
                 "Dataset checkpoints",
-                "Video checkpoints",
                 "Publishing dialog"
               ]
             },
@@ -1469,9 +1464,7 @@
               "chapters": [],
               "sections": [
                 "using-the-app#publish-a-lora-and-its-images-to-civitai",
-                "using-the-app#share-a-video-checkpoint-on-civitai",
-                "settings-reference#civitai-publishing",
-                "using-the-app#prepare-a-complete-civitai-lora-draft"
+                "settings-reference#civitai-publishing"
               ]
             },
             "host_dependencies": {
@@ -1493,9 +1486,7 @@
               "engines": [],
               "help_topics": [
                 "civitai-publish",
-                "civitai.link_host",
-                "civitai.video-publish",
-                "civitai.lora-composer"
+                "civitai.link_host"
               ],
               "install_actions": [],
               "install_groups": [],
@@ -1504,21 +1495,13 @@
                 "civitai"
               ],
               "tables": [
-                "civitai_link",
-                "video_civitai_link"
+                "civitai_link"
               ],
               "whats_new_ids": [
                 "2026-09-02-publish-to-civitai",
                 "2026-09-09-civitai-publish-settings-recovery",
                 "2026-10-17-civitai-picture-lora-page",
-                "2026-10-17-civitai-post-generation-model",
-                "2026-10-24-civitai-lora-composer",
-                "2026-10-25-civitai-trained-lora-choice",
-                "2026-10-25-civitai-gallery-examples",
-                "2026-10-25-civitai-upload-resume",
-                "2026-11-01-civitai-merged-loras",
-                "2026-11-02-civitai-lora-stamp",
-                "2026-11-02-civitai-run-file-names"
+                "2026-10-17-civitai-post-generation-model"
               ]
             },
             "permissions": [
@@ -1533,22 +1516,20 @@
             "python_package": "lds_civitai_publish",
             "requires": [],
             "schema_version": 2,
-            "version": "1.3.7"
+            "version": "1.4.0"
           },
-          "manifest_sha256": "3f211ed3605372a6588979834d9a9a9ce4f81c37e548c1f7865d0a94905fb52a",
-          "target": "plugins/civitai_publish/1.3.7.ldsplugin",
+          "manifest_sha256": "b513482684f6141dd4e6a953ef7e3176a22b5a36833a98d768beb37027335994",
+          "target": "plugins/civitai_publish/1.4.0.ldsplugin",
           "price": {
             "kind": "free"
           },
-          "published_at": "2026-11-02T19:54:21.402425Z",
+          "published_at": "2026-11-06T11:26:46.357164Z",
           "changelog": [
-            "Write the LoRA name and strength on a posted picture: an option of the post, on the posted copy only.",
-            "The Civitai action of the image viewer draws a line icon, like the viewer's other actions.",
-            "Choose a merged LoRA in the LoRA composer: after a dataset's runs, its merged and other LoRAs in ComfyUI are listed, prefilled from the dataset, with the gallery images made with that file.",
+            "Picture uploads and reads from Civitai retry after a network error, a server error or a rate limit; a step that creates something on Civitai is never repeated automatically.",
             "A missing Civitai API key now links directly to its setting from the publishing dialog.",
-            "Prepare a complete Civitai LoRA draft from a LoRA trained in LDS (dataset, run and save) or an imported file, with editable model details, license choices and example images. Available with LDS members 2026.10.30.1 or later.",
-            "Choose example images from the LDS gallery: the images generated with the draft training save, copied without metadata in the order you pick them.",
-            "Uploads retry after network failures, and a stopped upload resumes from where it stopped without sending anything twice to Civitai."
+            "A linked Civitai page still in draft is marked as a draft, and Open goes to its draft on Civitai.",
+            "The Civitai action of the image viewer draws a line icon, like the viewer's other actions.",
+            "Buttons and fields of the publishing dialog are easier to tap on small screens."
           ],
           "presentation": {
             "images": [
@@ -1557,7 +1538,7 @@
                 "caption": "Prepare an image post linked to a Civitai model.",
                 "height": 800,
                 "id": "overview",
-                "target": "media/civitai_publish/1.3.7/239151d3470e89da96a874cb538d12c7052ef9f258cd0cac93f630b6109bcb39.png",
+                "target": "media/civitai_publish/1.4.0/239151d3470e89da96a874cb538d12c7052ef9f258cd0cac93f630b6109bcb39.png",
                 "width": 1280
               }
             ],
