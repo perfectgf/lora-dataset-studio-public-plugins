@@ -3868,6 +3868,123 @@
             "author": "lora-dataset-studio",
             "bundled": false,
             "compatibility": {
+              "api": "<2,>=1.23",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.3",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Export a dataset to the Hugging Face Hub as a dataset repo — the kept images as metadata-free PNG copies, captions matching the dataset kind, a metadata.jsonl and a dataset card — from the dataset's Import & export section. Private by default, consent required, the reference photo off by default. Uses the HF_TOKEN the app already holds for gated downloads and cloud training.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open dataset export",
+                  "path": "/datasets?section=export"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/hf_publish/settings"
+              },
+              "setup_hint": "Use a Hugging Face token with permission to write the destination repository.",
+              "surfaces": [
+                "Dataset export",
+                "Publishing dialog"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#publish-a-dataset-to-hugging-face"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "hf_publish",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Publish to Hugging Face",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "hf-publish",
+                "hf-publish-token"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "hf_publish"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-09-hf-style-dataset-card"
+              ]
+            },
+            "permissions": [
+              "network",
+              "datasets:read",
+              "secrets:HF_TOKEN"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_hf_publish",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.7"
+          },
+          "manifest_sha256": "2af38243af8532a60cc27a3bf255549d30da6469b0f54804c774b6ee6afbd4b0",
+          "target": "plugins/hf_publish/1.0.7.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-07T00:36:37.757934Z",
+          "changelog": [
+            "Same features as 1.0.6, now available on every LDS install.",
+            "Hugging Face publishing errors now offer the relevant token setting and a link to create a token with write access.",
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Configure Hugging Face publishing access in the plugin settings.",
+                "caption": "Configure Hugging Face publishing access in the plugin settings.",
+                "height": 1000,
+                "id": "overview",
+                "target": "media/hf_publish/1.0.7/d0fa240bbb29070177734005a35e74edfedeebaf38236289d0291f1aedb90d39.png",
+                "width": 1440
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
               "api": "<2,>=1.28",
               "arch": [
                 "x86_64",
