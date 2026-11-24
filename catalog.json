@@ -5363,6 +5363,163 @@
       "id": "live",
       "releases": [
         {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.21",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.16.2",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Run a continuous local H3 channel from scripted scenes, with a browser player and VLC stream. Includes its own setup and LoRA controls; no other LDS plugin is required.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Live",
+                  "path": "/studio?lane=live"
+                }
+              ],
+              "setup": {
+                "label": "Prepare Live",
+                "path": "/plugins/live/settings"
+              },
+              "setup_hint": "Prepare the stream encoder and H3 in ComfyUI. Existing compatible H3 files are reused. No other LDS plugin is required.",
+              "surfaces": [
+                "Live studio",
+                "Live setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [
+              {
+                "entry": "frontend/hls.worker.js",
+                "loaders": [
+                  "frontend/chunks/hls-CoQ9AaYu.js"
+                ]
+              }
+            ],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#a-live-channel-from-your-video-lora",
+                "using-the-app#install-live"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3"
+            },
+            "id": "live",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Live channels",
+            "node_packs": [
+              {
+                "classes": [
+                  "MiniMaxH3TurboLoRA",
+                  "MiniMaxH3TurboSampler"
+                ],
+                "installation": {
+                  "action": "live_h3_turbo_nodes",
+                  "archive_prefix": "ComfyUI-MiniMax-H3-Turbo-4274783a23afcfdbea3b4876cb79effd6c510785",
+                  "folder": "ComfyUI-MiniMax-H3-Turbo",
+                  "id": "comfyui-minimax-h3-turbo",
+                  "requirements": [],
+                  "sha256": "1c9bba371cb63fb83a937f9bf428946cd548516e752c078e38743a369ddee464",
+                  "url": "https://codeload.github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo/zip/4274783a23afcfdbea3b4876cb79effd6c510785",
+                  "version": "1.2.3"
+                },
+                "pack": "ComfyUI-MiniMax-H3-Turbo",
+                "search": "MiniMax H3 Turbo",
+                "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+              }
+            ],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "page-video-live",
+                "setup-live"
+              ],
+              "install_actions": [
+                "live_encoder",
+                "live_h3_base",
+                "live_h3_text_encoder",
+                "live_h3_video_vae",
+                "live_h3_audio_vae",
+                "live_h3_turbo_lora",
+                "live_h3_turbo_nodes"
+              ],
+              "install_groups": [],
+              "job_kinds": [
+                "is_live"
+              ],
+              "model_slots": [],
+              "probes": [
+                "live"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-11-24-live-turbo-nodes",
+                "2026-09-03-video-live-channel"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "gpu",
+              "filesystem",
+              "network"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_live",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.3"
+          },
+          "manifest_sha256": "dca77dd99618a9f75eaf8e142180bbd2e0e7d02de44e67313da414f08dae456f",
+          "target": "plugins/live/1.0.3.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-24T18:15:36.921523Z",
+          "changelog": [
+            "Install the ComfyUI-MiniMax-H3-Turbo nodes that Turbo needs from the Live panel or the Live settings, at a verified version. Start waits until you restart ComfyUI or turn Turbo off.",
+            "Requires LDS 2026.11.16.2 or newer."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Prepare a continuous Live channel with scenes, clip length and playback controls.",
+                "caption": "Prepare a continuous Live channel with scenes, clip length and playback controls.",
+                "height": 1154,
+                "id": "overview",
+                "target": "media/live/1.0.3/7158322e7f70dab0be74d038d8be89565d08cab605c6902bfa28023e88fa8e4d.png",
+                "width": 1440
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
           "changelog": [
             "Public V2 edition. Install and manage this plugin from LDS Plugins."
           ],
@@ -6896,6 +7053,239 @@
       "id": "seedvr2",
       "releases": [
         {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.16.2",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Faithful image restoration with SeedVR2, including high-resolution tiling, model preparation, settings and independent finishing. No Klein Improve or other LDS plug-in required.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Restore dataset images",
+                  "path": "/datasets?section=images"
+                },
+                {
+                  "label": "Restore Bank images",
+                  "path": "/bank"
+                },
+                {
+                  "label": "Open settings",
+                  "path": "/plugins/seedvr2/settings?focus=seedvr2-engine"
+                }
+              ],
+              "setup": {
+                "label": "Prepare SeedVR2",
+                "path": "/plugins/seedvr2/settings"
+              },
+              "setup_hint": "Connect a compatible ComfyUI Windows portable, then prepare the SeedVR2 node pack and its two model files together. Restart ComfyUI when idle and re-check readiness. Existing packages are preserved; TTP tiling remains optional and installs with its own button. No other LDS plugin is required.",
+              "surfaces": [
+                "Bank",
+                "Dataset",
+                "Gallery",
+                "Canvas",
+                "Upscale settings",
+                "Upscale setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#seedvr2-upscaling-local"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0"
+            },
+            "id": "seedvr2",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "SeedVR2",
+            "node_packs": [
+              {
+                "classes": [
+                  "SeedVR2LoadDiTModel",
+                  "SeedVR2LoadVAEModel",
+                  "SeedVR2VideoUpscaler"
+                ],
+                "installation": {
+                  "action": "seedvr2_nodes",
+                  "archive_prefix": "ComfyUI-SeedVR2_VideoUpscaler-4490bd1f482e026674543386bb2a4d176da245b9",
+                  "folder": "seedvr2_videoupscaler",
+                  "id": "seedvr2",
+                  "python": ">=3.12",
+                  "requirements": [
+                    "torch==2.14.0",
+                    "torchvision==0.29.0",
+                    "safetensors==0.8.0",
+                    "numpy==2.5.2",
+                    "tqdm==4.70.1",
+                    "psutil==7.2.2",
+                    "einops==0.8.2",
+                    "omegaconf==2.3.1",
+                    "diffusers==0.40.0",
+                    "peft==0.20.0",
+                    "rotary-embedding-torch==0.9.1",
+                    "opencv-python==5.0.0.93",
+                    "gguf==0.19.0",
+                    "matplotlib==3.11.2",
+                    "antlr4-python3-runtime==4.9.3"
+                  ],
+                  "sha256": "04c61842bc00fd8673e6bc9a3b1b1935955461f363791070ed14d67d2a2e77fb",
+                  "url": "https://codeload.github.com/numz/ComfyUI-SeedVR2_VideoUpscaler/zip/4490bd1f482e026674543386bb2a4d176da245b9",
+                  "version": "2.5.24-lds.1",
+                  "wheelhouse": "resources/wheels",
+                  "wheels": [
+                    {
+                      "filename": "antlr4_python3_runtime-4.9.3+lds.1-py3-none-any.whl",
+                      "sha256": "4e909ac01d54970b10622e90c2645dad8b186d4d79b5864fa60bb155379173ef"
+                    }
+                  ]
+                },
+                "pack": "SeedVR2",
+                "search": "SeedVR2",
+                "url": "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
+              },
+              {
+                "classes": [
+                  "TTP_Image_Tile_Batch",
+                  "TTP_Image_Assy"
+                ],
+                "installation": {
+                  "action": "seedvr2_tiling_nodes",
+                  "archive_prefix": "Comfyui_TTP_Toolset-c8889e40e90e293226cc6810c7d27b9c17300da6",
+                  "folder": "Comfyui_TTP_Toolset",
+                  "id": "comfyui_ttp_toolset",
+                  "requirements": [
+                    "opencv-python==5.0.0.93"
+                  ],
+                  "sha256": "84c1786efdcc74d6bfbd975aba4e4367e4e419270cb4ba5d6cf8787ddd3f3e89",
+                  "url": "https://codeload.github.com/TTPlanetPig/Comfyui_TTP_Toolset/zip/c8889e40e90e293226cc6810c7d27b9c17300da6",
+                  "version": "1.0.5"
+                },
+                "pack": "Comfyui_TTP_Toolset",
+                "search": "TTP Toolset",
+                "url": "https://github.com/TTPlanetPig/Comfyui_TTP_Toolset"
+              }
+            ],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "seedvr2"
+              ],
+              "engines": [
+                "seedvr2"
+              ],
+              "help_topics": [
+                "action-seedvr2-restore",
+                "seedvr2.finish_sharpen",
+                "seedvr2.finish_grain",
+                "seedvr2.finish_grain_saturation",
+                "seedvr2.tiling",
+                "seedvr2.tile_px",
+                "seedvr2.tile_threshold",
+                "seedvr2.vae",
+                "setup-seedvr2-install",
+                "seedvr2.default_engine"
+              ],
+              "install_actions": [
+                "seedvr2_nodes",
+                "seedvr2_model",
+                "seedvr2_vae",
+                "seedvr2_tiling_nodes"
+              ],
+              "install_groups": [
+                "seedvr2"
+              ],
+              "model_slots": [],
+              "probes": [
+                "comfyui.seedvr2_missing",
+                "comfyui.seedvr2_invalid",
+                "comfyui.seedvr2_nodes_missing",
+                "comfyui.seedvr2_nodes_installed",
+                "comfyui.seedvr2_ready",
+                "comfyui.seedvr2_tiling_ready",
+                "comfyui.seedvr2_tiling_nodes_missing",
+                "comfyui.seedvr2_tiling_nodes_installed",
+                "comfyui.seedvr2_ceiling_mp"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-11-24-seedvr2-tiling-pack-one-click",
+                "2026-09-10-seedvr2-node-discovery-retry",
+                "2026-09-10-seedvr2-overlapping-tile-joins",
+                "2026-09-10-seedvr2-complete-tiles-and-finishing",
+                "2026-09-07-seedvr2-standalone",
+                "2026-08-03-seedvr2-tile-and-vae-settings",
+                "2026-08-03-seedvr2-tiling-is-a-choice",
+                "2026-08-03-seedvr2-tiled-highres",
+                "2026-08-02-seedvr2-in-the-lightbox",
+                "2026-08-02-seedvr2-results-come-back",
+                "2026-08-02-seedvr2-upscaling",
+                "2026-08-04-seedvr2-settings-say-which-lane-your-target-takes"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "filesystem",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_seedvr2",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.7"
+          },
+          "manifest_sha256": "1d5fdd800a8f9634b04c88ead5eea5d16832b6ff42a5913327a8d69a54c75662",
+          "target": "plugins/seedvr2/1.0.7.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-24T18:15:36.921523Z",
+          "changelog": [
+            "Install the Comfyui_TTP_Toolset node pack of the optional high-resolution tiling lane at a pinned and verified version: by itself on a ComfyUI Windows portable, with the exact steps elsewhere. Then restart ComfyUI.",
+            "Requires LDS 2026.11.16.2 or newer."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Prepare SeedVR2 and choose its restoration models independently of Klein Improve.",
+                "caption": "Prepare SeedVR2 and choose its restoration models independently of Klein Improve.",
+                "height": 1000,
+                "id": "overview",
+                "target": "media/seedvr2/1.0.7/0f37cd404344467ad0587c21eda4983b86bd1a2c8de0abff0de4b64c99a12e2f.png",
+                "width": 1440
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
           "changelog": [
             "Public V2 edition. Install and manage this plugin from LDS Plugins."
           ],
@@ -7107,6 +7497,572 @@
     {
       "id": "video",
       "releases": [
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.32",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.16.2",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Create and train video datasets, curate clips in Video Bank, and generate video with H3, identity references, continuations and montages.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Video Bank",
+                  "path": "/video-bank"
+                },
+                {
+                  "label": "Open Test Studio",
+                  "path": "/studio"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/video/settings"
+              },
+              "setup_hint": "Decoding, analysis and generation have separate prerequisites. Setup reports what is available for each function.",
+              "surfaces": [
+                "Video bank",
+                "Video datasets",
+                "Video Test Studio",
+                "Video settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#video-lane-configuration-keys",
+                "using-the-app#the-video-bank-turn-a-folder-of-rushes-into-shots",
+                "using-the-app#triage-a-video-bank-from-the-keyboard",
+                "using-the-app#measure-your-shots-and-choose-your-own-cuts",
+                "using-the-app#retouch-a-cut-trim-split-or-draw-a-shot-by-hand",
+                "using-the-app#change-how-often-a-rush-gets-cut",
+                "using-the-app#find-scenes-in-a-video-bank-by-typing-a-word",
+                "using-the-app#describe-your-shots-and-search-what-happens-in-them",
+                "using-the-app#video-training-sets-and-the-two-things-to-check-before-you-cut-one",
+                "using-the-app#work-on-a-video-training-set",
+                "using-the-app#render-and-compare-video-checkpoint-previews",
+                "using-the-app#remember-best-settings-for-a-video-lora",
+                "using-the-app#frozen-subject-scan-presets",
+                "using-the-app#test-a-video-lora-before-you-trust-it",
+                "using-the-app#continue-a-clip-from-its-last-frame",
+                "using-the-app#make-a-video-from-references",
+                "using-the-app#match-the-format-of-a-reference-video",
+                "using-the-app#choose-references-from-the-library",
+                "using-the-app#automatic-continuation",
+                "using-the-app#smooth-pick-the-rate-before-it-runs",
+                "settings-reference#video-reference-render-settings",
+                "settings-reference#video-studio-automatic-continuation",
+                "using-the-app#first-frame-identity-refmods"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==13.0.0",
+              "requests": "==2.34.2",
+              "sqlalchemy": "==2.0.52"
+            },
+            "id": "video",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Video lane",
+            "node_packs": [
+              {
+                "classes": [
+                  "MiniMaxH3RefModExtract",
+                  "MiniMaxH3RefModApply"
+                ],
+                "installation": {
+                  "action": "h3_refmods_nodes",
+                  "archive_prefix": "ComfyUI-MiniMaxH3Mod-22ca77e247375dd47fc7340286b5f391887d3410",
+                  "folder": "ComfyUI-MiniMaxH3Mod",
+                  "id": "h3-refmods",
+                  "requirements": [
+                    "safetensors==0.6.2",
+                    "numpy==2.2.6",
+                    "Pillow==12.3.0"
+                  ],
+                  "sha256": "7e1f5d3f47fd3639de03c23ee4340af5cd9b6f0e721cf7f60af60e99eceac1b2",
+                  "url": "https://codeload.github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod/zip/22ca77e247375dd47fc7340286b5f391887d3410",
+                  "version": "0.2.5"
+                },
+                "pack": "ComfyUI-MiniMaxH3Mod",
+                "url": "https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod"
+              },
+              {
+                "classes": [
+                  "SpectrumApplyMiniMaxH3"
+                ],
+                "installation": {
+                  "action": "h3_spectrum_nodes",
+                  "archive_prefix": "ComfyUI-Spectrum-MiniMax-H3-7df883bb2361b7884ad789e97effd1dc37c8963a",
+                  "folder": "ComfyUI-Spectrum-MiniMax-H3",
+                  "id": "h3-spectrum",
+                  "requirements": [],
+                  "sha256": "c27fda84428308fdb84fd32deb3a22eb9907186c4f73239bc09c8846d37bc9a9",
+                  "url": "https://codeload.github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3/zip/7df883bb2361b7884ad789e97effd1dc37c8963a",
+                  "version": "0.2.30"
+                },
+                "pack": "ComfyUI-Spectrum-MiniMax-H3",
+                "url": "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
+              },
+              {
+                "classes": [
+                  "ClipProjApply"
+                ],
+                "installation": {
+                  "action": "h3_clipproj_nodes",
+                  "archive_prefix": "ComfyUI-ClipProj-c01ba8fb8f41b4f2094dbd0b185cdc238fb6134c",
+                  "folder": "ComfyUI-ClipProj",
+                  "id": "h3-clipproj",
+                  "requirements": [],
+                  "sha256": "5db98923f741bafd1beb56649df23a0f7981055ab482b3c34da9778083e995df",
+                  "url": "https://codeload.github.com/nicolab28/ComfyUI-ClipProj/zip/c01ba8fb8f41b4f2094dbd0b185cdc238fb6134c",
+                  "version": "0.1.13"
+                },
+                "pack": "ComfyUI-ClipProj",
+                "url": "https://github.com/nicolab28/ComfyUI-ClipProj"
+              },
+              {
+                "classes": [
+                  "MiniMaxH3TurboLoRA",
+                  "MiniMaxH3TurboSampler"
+                ],
+                "installation": {
+                  "action": "h3_turbo_nodes",
+                  "archive_prefix": "ComfyUI-MiniMax-H3-Turbo-4274783a23afcfdbea3b4876cb79effd6c510785",
+                  "folder": "ComfyUI-MiniMax-H3-Turbo",
+                  "id": "comfyui-minimax-h3-turbo",
+                  "requirements": [],
+                  "sha256": "1c9bba371cb63fb83a937f9bf428946cd548516e752c078e38743a369ddee464",
+                  "url": "https://codeload.github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo/zip/4274783a23afcfdbea3b4876cb79effd6c510785",
+                  "version": "1.2.3"
+                },
+                "pack": "ComfyUI-MiniMax-H3-Turbo",
+                "search": "MiniMax H3 Turbo",
+                "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+              },
+              {
+                "classes": [
+                  "ApplyVDNH3"
+                ],
+                "installation": {
+                  "action": "h3_vdn_nodes",
+                  "archive_prefix": "ComfyUI-VDN-H3-3eb63496c24ca70faaf8a14b6c75fcb480e34bf1",
+                  "folder": "ComfyUI-VDN-H3",
+                  "id": "comfyui-vdn-h3",
+                  "requirements": [],
+                  "sha256": "7246f43d7b95b2f51cab82291645d1cc183ecf4abb1a890518dea023dc9c1fdf",
+                  "url": "https://codeload.github.com/Saganaki22/ComfyUI-VDN-H3/zip/3eb63496c24ca70faaf8a14b6c75fcb480e34bf1",
+                  "version": "1.5.2"
+                },
+                "pack": "ComfyUI-VDN-H3",
+                "search": "VDN-H3",
+                "url": "https://github.com/Saganaki22/ComfyUI-VDN-H3"
+              },
+              {
+                "classes": [
+                  "MMH3UltimateUpscale",
+                  "MMH3LatentUpscaleWithModelParams",
+                  "MMH3TemporalSplitParams"
+                ],
+                "installation": {
+                  "action": "h3_upscale_nodes",
+                  "archive_prefix": "Comfyui-MMH3-UltimateUpscale-613de6c5afc1f9c8c204112901f7dafba66c0dc7",
+                  "folder": "Comfyui-MMH3-UltimateUpscale",
+                  "id": "comfyui-mmh3-ultimateupscale",
+                  "requirements": [],
+                  "sha256": "2550ca8dbf07284bb65ae70c6366b61790c0e6d2b543817cbcb3b005317bd1ab",
+                  "url": "https://codeload.github.com/bbaudio-2025/Comfyui-MMH3-UltimateUpscale/zip/613de6c5afc1f9c8c204112901f7dafba66c0dc7",
+                  "version": "0.0.7"
+                },
+                "pack": "Comfyui-MMH3-UltimateUpscale",
+                "search": "MMH3 Ultimate Upscale",
+                "url": "https://github.com/bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+              },
+              {
+                "classes": [
+                  "RIFE VFI"
+                ],
+                "installation": {
+                  "action": "h3_vfi_nodes",
+                  "archive_prefix": "ComfyUI-Frame-Interpolation-26545cc2dd95bc3d27f056016300673bdeee78f5",
+                  "folder": "ComfyUI-Frame-Interpolation",
+                  "id": "comfyui-frame-interpolation",
+                  "requirements": [],
+                  "sha256": "18febf83edca39068a7947050672f056c8b70aaf0fcbb2380a4f0d88d90346b0",
+                  "url": "https://codeload.github.com/Fannovel16/ComfyUI-Frame-Interpolation/zip/26545cc2dd95bc3d27f056016300673bdeee78f5",
+                  "version": "1.0.11"
+                },
+                "pack": "ComfyUI-Frame-Interpolation",
+                "search": "Frame Interpolation",
+                "url": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
+              },
+              {
+                "classes": [
+                  "VHS_LoadVideoPath",
+                  "VHS_VideoCombine"
+                ],
+                "installation": {
+                  "action": "h3_vhs_nodes",
+                  "archive_prefix": "ComfyUI-VideoHelperSuite-4d907bee61e92c2e65af3bd6383a4e4d356126d1",
+                  "folder": "ComfyUI-VideoHelperSuite",
+                  "id": "comfyui-videohelpersuite",
+                  "requirements": [
+                    "opencv-python==5.0.0.93",
+                    "imageio-ffmpeg==0.6.0"
+                  ],
+                  "sha256": "5114977eefb133c76592a5213c45ad3caa1ad7b1c2e4a77905b5ff0c48ca4363",
+                  "url": "https://codeload.github.com/Kosinkadink/ComfyUI-VideoHelperSuite/zip/4d907bee61e92c2e65af3bd6383a4e4d356126d1",
+                  "version": "1.7.9"
+                },
+                "pack": "ComfyUI-VideoHelperSuite",
+                "search": "VideoHelperSuite",
+                "url": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+              }
+            ],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "video_caption",
+                "video_bank",
+                "custom_shots"
+              ],
+              "engines": [],
+              "help_topics": [
+                "setup-video-studio",
+                "video-checkpoint-previews",
+                "video-best-settings",
+                "page-video-bank",
+                "page-video-dataset",
+                "page-video-studio",
+                "video-studio-references",
+                "video-studio-reference-model",
+                "video-reference-library",
+                "video-reference-cut",
+                "video-reference-format",
+                "video-reference-observer",
+                "video-acceleration",
+                "video-base-light",
+                "video-continue",
+                "video-auto-continue",
+                "video-batch-prompt",
+                "video-shots",
+                "video-start-frame-viewer",
+                "video-last-frame-tab",
+                "video-smooth-rate",
+                "video-studio-start-frame",
+                "video-studio-motion-writer",
+                "video-studio-quick-prompts",
+                "video-bank-passes",
+                "video-burst-triage",
+                "video-quality-cuts",
+                "video-trim-split",
+                "video-shot-threshold",
+                "video-single-shot",
+                "video-transition-kind",
+                "video-captions",
+                "video-caption-wording",
+                "video-audio-cuts",
+                "video-source-cap",
+                "video-edge-trim",
+                "video-duplicate-shots",
+                "video-watermark-flag",
+                "video-safe-zone",
+                "video-defect-sweep",
+                "video-ai-check",
+                "video-camera-motion",
+                "video-temporal-coherence",
+                "video-flag-chips",
+                "video-bank-search",
+                "video-capability-pieces",
+                "video-datasets",
+                "video-dataset-clips",
+                "video-dataset-captions",
+                "video-dataset-references",
+                "video-dataset-training",
+                "video-dataset-checkpoints",
+                "video-dataset-studio",
+                "video-training-controls",
+                "video-train-local",
+                "video-promote-target",
+                "video-first-frame-refmods",
+                "video-dataset-import",
+                "video-scan-presets"
+              ],
+              "install_actions": [
+                "video",
+                "video_host",
+                "shot_detect",
+                "h3_base",
+                "h3_text_encoder",
+                "h3_video_vae",
+                "h3_audio_vae",
+                "h3_base_light",
+                "h3_turbo_lora",
+                "h3_parasyte_lora",
+                "h3_dareties_lora",
+                "h3_video_vae_int8",
+                "h3_ref_base",
+                "h3_ref_base_light",
+                "h3_ref_base_eros",
+                "h3_ref_turbo_4_lora",
+                "h3_ref_turbo_8_lora",
+                "h3_vdn_stage",
+                "h3_vdn_stage_int8",
+                "h3_refmods_nodes",
+                "h3_fasth3_lora",
+                "h3_taomate_lora",
+                "h3_spectrum_nodes",
+                "h3_fast_writer",
+                "h3_clip_projection",
+                "h3_clipproj_nodes",
+                "h3_camera_motion_lora",
+                "h3_360_orbit_lora",
+                "h3_turbo_nodes",
+                "h3_vdn_nodes",
+                "h3_upscale_nodes",
+                "h3_vfi_nodes",
+                "h3_vhs_nodes"
+              ],
+              "install_groups": [],
+              "job_kinds": [
+                "is_video_test"
+              ],
+              "model_slots": [],
+              "probes": [
+                "video_host_ready",
+                "comfyui.video_studio_missing",
+                "comfyui.video_studio_ready",
+                "comfyui.video_studio_reference",
+                "comfyui.video_studio_options",
+                "comfyui.video_studio_sage",
+                "comfyui.h3_attention_nodes_missing",
+                "comfyui.h3_attention_nodes_installed",
+                "comfyui.h3_host_node_actions",
+                "video",
+                "video_detail",
+                "video_decode",
+                "video_detect",
+                "video_encode"
+              ],
+              "tables": [
+                "video_bank",
+                "video_source",
+                "video_clip",
+                "video_dataset",
+                "video_dataset_clip",
+                "video_test_clip",
+                "video_checkpoint_preview"
+              ],
+              "whats_new_ids": [
+                "2026-11-24-video-node-packs-one-click",
+                "2026-11-22-video-installed-h3-loras",
+                "2026-11-21-video-compare-reference",
+                "2026-11-21-video-native-reference-encoder",
+                "2026-11-21-video-timed-motion-cues",
+                "2026-11-21-video-library-studio-settings",
+                "2026-11-21-video-library-shot-editor",
+                "2026-11-21-video-studio-render-options",
+                "2026-11-21-video-library-render",
+                "2026-09-30-video-scan-presets",
+                "2026-09-28-video-analysis-progress",
+                "2026-09-26-video-publishing-help",
+                "2026-09-25-video-continue-references",
+                "2026-09-24-video-gallery-performance",
+                "2026-09-24-video-clipproj",
+                "2026-09-23-video-official-int8-vae",
+                "2026-09-23-video-refmods-no-count-limit",
+                "2026-09-23-video-reference-lightbox",
+                "2026-09-23-video-recover-saved-mp4",
+                "2026-09-23-video-performance-playback",
+                "2026-09-23-video-workload-choice",
+                "2026-09-23-video-import-selection",
+                "2026-09-23-create-video-dataset",
+                "2026-09-20-video-refmods-without-frames",
+                "2026-09-20-video-auto-refmod-inputs",
+                "2026-09-19-video-chimera-refmods",
+                "2026-09-09-video-smooth-landscape",
+                "2026-09-09-video-smooth-audio-count",
+                "2026-09-09-video-queue-owner",
+                "2026-09-08-vdn-reference",
+                "2026-09-07-zzzz-continue-a-reference-clip",
+                "2026-09-07-video-live-separate",
+                "2026-09-06-zzzz-video-prompt-survives-reload",
+                "2026-09-06-zzz-video-reference-cut",
+                "2026-09-06-zz-video-joycaption-stills-and-take-lora",
+                "2026-09-06-video-vdn-h3-acceleration",
+                "2026-09-05-zzzz-reference-clip-continue",
+                "2026-09-05-zzzz-reference-video-joycaption",
+                "2026-09-05-zzz-reference-video-format",
+                "2026-09-05-zz-reference-roles-sparse",
+                "2026-09-05-z-reference-library",
+                "2026-09-05-video-graph-previews",
+                "2026-09-04-zzzzzzzzzz-video-civitai-best-settings",
+                "2026-09-04-zzzzzzzzzz-video-auto-continuation",
+                "2026-09-04-zzzzzzzzzz-h3-reference-video",
+                "2026-09-04-zzzzzzzzz-video-training-controls",
+                "2026-09-04-zzzzzz-writers-follow-the-take-and-the-last-frame",
+                "2026-09-04-zzzz-start-frame-viewer-and-last-frame-tab",
+                "2026-09-04-zzz-shots-with-timecodes",
+                "2026-09-04-zz-lighter-w4a8-base",
+                "2026-09-04-z-motion-writer-dials-and-clear",
+                "2026-09-03-video-test-studio-prompts-per-picture",
+                "2026-09-03-video-test-studio-continue-from-last-frame",
+                "2026-09-03-video-accelerations",
+                "2026-09-03-video-run-graph-and-previews",
+                "2026-09-03-video-smooth-rate",
+                "2026-09-03-video-quick-prompts",
+                "2026-09-03-video-studio-render-time",
+                "2026-09-02-video-studio-start-frame-batch",
+                "2026-09-02-video-studio-fast-disk",
+                "2026-09-02-video-studio-preview-size",
+                "2026-09-02-video-studio-active-state-painted",
+                "2026-09-02-video-studio-dataset-clip-posters",
+                "2026-09-02-video-checkpoints-and-loras",
+                "2026-09-01-video-dataset-workspace",
+                "2026-09-01-remove-a-clip-from-a-video-set",
+                "2026-09-02-start-frame-clip-tab-fixed",
+                "2026-09-01-motion-auto-instructed",
+                "2026-09-01-motion-auto-and-enrich",
+                "2026-09-01-video-studio-smooth-vfi",
+                "2026-09-01-reuse-brings-the-start-frame-back",
+                "2026-09-01-video-studio-length-to-15s",
+                "2026-09-01-video-studio-steps-dial",
+                "2026-09-01-start-frame-from-the-gallery",
+                "2026-09-01-video-prep-in-one-button",
+                "2026-09-01-slice-long-shots",
+                "2026-09-01-max-shot-length-cut",
+                "2026-09-01-clip-length-suggestion",
+                "2026-09-01-video-bank-wears-the-bank-shell",
+                "2026-09-01-video-captions-follow-what-you-installed",
+                "2026-09-01-video-captions-fit-the-encoder",
+                "2026-09-01-video-captions-work-under-transformers-5",
+                "2026-08-31-video-test-studio",
+                "2026-08-30-delete-video-runs",
+                "2026-08-30-caption-budget-and-audio",
+                "2026-08-30-sota-video-captions",
+                "2026-08-30-pass-info-dots",
+                "2026-08-30-describe-shots-window",
+                "2026-08-30-video-triage-exits",
+                "2026-08-30-promote-window-knows-the-numbers",
+                "2026-08-30-h3-ref2va-training",
+                "2026-08-30-video-trigger-word",
+                "2026-08-30-h3-i2v-training",
+                "2026-08-30-h3-stills-training",
+                "2026-08-30-video-steps-sized-to-the-dataset",
+                "2026-08-30-h3-trains-the-way-h3-is-trained",
+                "2026-08-19-video-burst-triage",
+                "2026-08-19-video-temporal-coherence",
+                "2026-08-19-video-camera-motion",
+                "2026-08-19-video-ai-check",
+                "2026-08-18-video-defect-sweep",
+                "2026-08-18-video-safe-zone",
+                "2026-08-18-scrape-videos-into-a-video-bank",
+                "2026-08-18-video-look-score",
+                "2026-08-08-shot-threshold-recut",
+                "2026-08-08-single-shot-file",
+                "2026-08-08-min-shot-seconds",
+                "2026-08-07-video-install-checks-the-encoder",
+                "2026-08-06-setup-counts-the-video-pieces",
+                "2026-08-06-shot-detection-installs-its-decoder",
+                "2026-08-06-video-extras-installable-from-setup",
+                "2026-08-06-video-watermark-flag",
+                "2026-08-06-video-duplicate-shots",
+                "2026-08-06-video-flag-chips",
+                "2026-08-04-video-minimum-length",
+                "2026-08-04-video-train-local",
+                "2026-08-04-video-cloud-training",
+                "2026-08-04-video-caption-wording",
+                "2026-08-04-video-caption-model-choice",
+                "2026-08-04-video-describe-shots",
+                "2026-08-04-video-source-cap-knob",
+                "2026-08-04-video-edge-trim",
+                "2026-08-04-video-audio-metrics",
+                "2026-08-04-video-find-scenes",
+                "2026-08-04-video-clip-retouch",
+                "2026-08-04-video-quality-flags",
+                "2026-08-04-video-bank"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "gpu",
+              "filesystem",
+              "network",
+              "secrets:VAST_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_video",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.3.46"
+          },
+          "manifest_sha256": "62c5b56bd80c70d42ff36c074352556925bfb9d267d9cb8ae46b9beb7c0d1ee6",
+          "target": "plugins/video/1.3.46.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-24T18:15:36.921523Z",
+          "changelog": [
+            "Install a missing ComfyUI node pack for Turbo, VDN-H3, the latent upscale or Smooth with one click, at a verified version, then restart ComfyUI. ComfyUI-VideoHelperSuite, which Smooth uses, installs automatically only on a ComfyUI Windows portable.",
+            "Find installed H3 LoRAs in the ComfyUI LoRA root and custom subfolders.",
+            "Show the saved reference video beside a finished clip.",
+            "Reference mode automatically uses the native MiniMax H3 32B encoder when installed and retains the compact 4B encoder as a fallback.",
+            "Local shot descriptions include measured direction when one region moves consistently against a stable background.",
+            "Render actions that support Studio controls preserve source duration and reviewed shots when Studio settings are selected.",
+            "Local analysis reads up to five time-labelled images from every shot. Participating library actions can display and edit its timed descriptions.",
+            "Review timed descriptions for library renders with your locally installed video caption model.",
+            "Supported library renders can analyze and edit shot descriptions with timestamps.",
+            "Library videos keep all Studio controls available. Choose the automatic action or render with your own settings.",
+            "Library render actions use their own settings, source timing and sound. Spectrum is updated for current H3 samplers.",
+            "Select a source file from a video bank and prepare its exact excerpt in the Studio. TikTok and Reel posts use the scraper’s native downloader.",
+            "Image reference cards now support actions from enabled libraries.",
+            "Other LDS tools can add a library next to Motion in the Video Test Studio.",
+            "A library next to Motion can give the clip the format of the video it adds, like the \"Use this video’s format for output\" box.",
+            "The LoRA list of the Video Test Studio starts folded when the page opens: the panel shows the current choice, and Change unfolds the list.",
+            "Other LDS tools can add their own action to a finished clip of the Video Test Studio and file the clip they make from it next to the original, with a link back to its source.",
+            "Film a frozen subject with scan-style camera passes: a 360° loop, wide or close orbit, high or low pass, or a near/far orbit, with the Camera Motion and Frozen 360 Orbit adapters from Video settings.",
+            "Select an installed video decoder provided by a compatible plugin. The decoder choice is saved with each clip and restored by Reuse.",
+            "Unavailable decoders and unsupported remote targets stop before rendering. Requires LDS 2026.11.16.2 or newer."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Compare a source clip with its neural render side by side.",
+                "caption": "Compare a source clip with its neural render side by side.",
+                "height": 888,
+                "id": "overview",
+                "target": "media/video/1.3.46/992fc9ebd6d0f3ebda846d66764ae9666de4b4a370c26b2c3db8b82556834865.png",
+                "width": 1100
+              }
+            ],
+            "schema_version": 1
+          }
+        },
         {
           "manifest": {
             "api": 1,
