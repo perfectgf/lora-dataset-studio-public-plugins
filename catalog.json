@@ -2491,6 +2491,209 @@
                 "x86_64",
                 "arm64"
               ],
+              "lds": ">=2026.11.15.01",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<3.15,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Train images and videos on rented GPUs, supervise runtime and recover checkpoints. Includes full-model delivery and Hub storage.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open training",
+                  "path": "/datasets?section=training"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/cloud_training/settings"
+              },
+              "setup_hint": "Configure a cloud provider to train images or videos. Cloud work can incur provider charges.",
+              "surfaces": [
+                "Dataset training",
+                "Video training",
+                "Run history",
+                "Cloud settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "using-the-app#compare-settings-with-two-runs-at-once",
+                "settings-reference#cloud-gpu-vast-ai",
+                "settings-reference#cloud-training",
+                "settings-reference#full-model-dense-recipe",
+                "settings-reference#cloud-run-housekeeping",
+                "settings-reference#hugging-face-storage",
+                "dataset-guide#10-full-model-recipe-what-you-can-change",
+                "settings-reference#cloud-training-configuration-keys"
+              ]
+            },
+            "host_dependencies": {
+              "filelock": "==3.32.5",
+              "flask": "==3.1.3",
+              "huggingface-hub": ">=0.24",
+              "requests": "==2.34.2"
+            },
+            "id": "cloud_training",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Cloud training",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "paths": [
+                  "cloud_runs_dir"
+                ]
+              },
+              "config_sections": [
+                "cloud"
+              ],
+              "engines": [],
+              "help_topics": [
+                "VAST_API_KEY",
+                "cloud.max_concurrent_runs",
+                "cloud.max_price_per_hour",
+                "cloud.monthly_budget_usd",
+                "cloud.stall_timeout_minutes",
+                "cloud.first_step_timeout_minutes",
+                "cloud.first_step_download_budget_minutes",
+                "cloud.max_runtime_minutes",
+                "cloud.freeze_watchdog_minutes",
+                "cloud.upload_stall_minutes",
+                "cloud.unreachable_grace_minutes",
+                "cloud.min_reliability",
+                "cloud.verified_only",
+                "cloud.secure_cloud_only",
+                "cloud.full_transformer.delivery",
+                "cloud.dense_fetch_local",
+                "cloud.full_transformer.private_storage_limit_gb",
+                "cloud.hf_storage",
+                "training.full_model_recipe",
+                "training.full_model_base",
+                "training.full_model_estimate",
+                "training.full_model_quality",
+                "training.full_model_fp8_export",
+                "paths.cloud_runs_dir",
+                "workspace-dense-models",
+                "parallel-cloud-runs",
+                "runs-clean-one-run-staging",
+                "storage-orphan-run-folders",
+                "video-cloud-training"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [
+                "cloud_training",
+                "vast"
+              ],
+              "tables": [
+                "cloud_training_run"
+              ],
+              "whats_new_ids": [
+                "2026-11-11-cloud-launch-always-visible",
+                "2026-11-02-full-model-before-you-launch",
+                "2026-11-02-full-model-base-saved",
+                "2026-11-02-cloud-key-alert-while-loading",
+                "2026-10-21-cloud-resume-upload",
+                "2026-09-26-cloud-video-rank",
+                "2026-09-23-cloud-video-sample-choice",
+                "2026-09-23-cloud-test-family",
+                "2026-09-23-cloud-rental-reliability",
+                "2026-09-23-cloud-qwen-image-21",
+                "2026-09-22-cloud-continue-gpu-choice",
+                "2026-09-05-zz-vast-referral-link",
+                "2026-09-02-video-cloud-launch-window",
+                "2026-08-30-video-cloud-gpu-picker",
+                "2026-08-29-video-lora-in-the-cloud",
+                "2026-08-17-vast-do-not-rent-this-machine-again",
+                "2026-08-07-parallel-cloud-runs",
+                "2026-08-04-full-model-run-no-longer-reads-as-gone",
+                "2026-08-04-full-model-lands-on-your-computer",
+                "2026-08-04-cloud-quantize-rents-a-machine-that-fits",
+                "2026-08-03-quantize-in-the-cloud-without-downloading",
+                "2026-08-03-hf-storage-precheck-and-cleanup",
+                "2026-08-03-restart-no-longer-kills-a-live-cloud-run",
+                "2026-08-02-cloud-launch-is-observable",
+                "2026-08-02-cloud-only-installs-see-their-checkpoints",
+                "2026-08-01-verified-cloud-token-stops-nagging",
+                "2026-07-28-cloud-boot-waits-for-a-pod-that-is-still-working",
+                "2026-07-28-cloud-watchdog-counts-a-downloading-pod-as-progress",
+                "2026-07-28-cloud-run-download-bytes-and-durable-freeze-clock",
+                "2026-07-28-busy-database-no-longer-strands-a-paid-cloud-run",
+                "2026-07-26-cloud-run-survives-a-busy-database",
+                "2026-07-26-cloud-run-survives-a-restart-after-submit",
+                "2026-07-26-cloud-checkpoint-rescue-is-never-cut-short",
+                "2026-07-26-cloud-stop-that-cannot-lie",
+                "2026-07-21-cloud-unreachable-grace",
+                "2026-07-17-slider-lora-cloud"
+              ]
+            },
+            "permissions": [
+              "network",
+              "secrets:VAST_API_KEY",
+              "secrets:HF_CLOUD_TOKEN",
+              "secrets:HF_TOKEN",
+              "filesystem",
+              "datasets:read",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_cloud_training",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.2.2.1"
+          },
+          "manifest_sha256": "979a34063936ff0e580da26ad781adce2ee5312dcab8a7cc79981497ceacdf0a",
+          "target": "plugins/cloud_training/1.2.2.1.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-24T19:13:28.138428Z",
+          "changelog": [
+            "Built-in trainer images and the quantization worker dependency are supplied through the LDS server.",
+            "Keep the cloud training button visible while availability is checked. Retry a failed check or open cloud settings directly when a key is missing. An outdated local trainer does not hide cloud training."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Compare GPU speed and estimated cost before starting a cloud run.",
+                "caption": "Compare GPU speed and estimated cost before starting a cloud run.",
+                "height": 629,
+                "id": "overview",
+                "target": "media/cloud_training/1.2.2.1/1e4fb0339e224d2e76ea3478c5ebf205a87dc13dfd934c1e70cfb46a1bab3694.png",
+                "width": 538
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.23",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
               "lds": ">=2026.11.06.1",
               "os": [
                 "windows",
@@ -5183,6 +5386,184 @@
       "releases": [
         {
           "changelog": [
+            "The preparation button now opens ComfyUI Setup to configure the engine and prepare the shared Klein files.",
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.15.01",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Improve detail with Klein, including instruction editing, LoRA presets, settings and finishing. Independent of SeedVR2 and other LDS plug-ins.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Improve dataset images",
+                  "path": "/datasets?section=images"
+                },
+                {
+                  "label": "Improve Bank images",
+                  "path": "/bank"
+                },
+                {
+                  "label": "Open settings",
+                  "path": "/plugins/image_upscale/settings?focus=klein-improve-settings"
+                }
+              ],
+              "setup": {
+                "label": "Prepare Klein Improve",
+                "path": "/setup?step=comfyui"
+              },
+              "setup_hint": "Open Setup to select ComfyUI and prepare the shared Klein files. The plugin settings control the instruction, LoRAs and finishing.",
+              "surfaces": [
+                "Bank",
+                "Dataset",
+                "Gallery",
+                "Canvas",
+                "Upscale settings",
+                "Upscale setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#improve-finishing",
+                "using-the-app#upscale-a-picture-straight-from-the-board",
+                "settings-reference#klein-improvement-settings"
+              ]
+            },
+            "host_dependencies": {},
+            "id": "image_upscale",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Klein Improve",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {
+                "identity_prompts": [
+                  "klein_improve",
+                  "klein_improve_enabled"
+                ],
+                "improve": [
+                  "colour_match",
+                  "sharpen",
+                  "grain",
+                  "grain_saturation"
+                ],
+                "klein": [
+                  "improve_consistency_strength",
+                  "improve_character_lora_strength",
+                  "improve_steps",
+                  "improve_base_lora_strength",
+                  "improve_megapixels",
+                  "improve_lora_preset"
+                ]
+              },
+              "config_sections": [],
+              "engines": [
+                "klein"
+              ],
+              "help_topics": [
+                "improve.colour_match",
+                "improve.sharpen",
+                "improve.grain",
+                "improve.grain_saturation",
+                "identity_prompts.klein_improve",
+                "klein.improve_strength",
+                "action-bank-improve",
+                "action-edit-improve-instruction",
+                "action-reimprove-tile",
+                "action-canvas-improve",
+                "image_upscale.default_engine"
+              ],
+              "install_actions": [],
+              "install_groups": [],
+              "model_slots": [],
+              "probes": [],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-07-klein-improve-seedvr2-split",
+                "2026-09-01-bank-improve-carries-the-dials",
+                "2026-09-01-improve-panel-lora-strengths",
+                "2026-09-01-improve-result-zoom",
+                "2026-08-29-improve-settings-window",
+                "2026-08-24-use-these-improve-settings",
+                "2026-08-24-improve-output-size-in-note",
+                "2026-08-24-improve-lora-preset",
+                "2026-08-08-improve-instruction-editable-in-place",
+                "2026-08-05-upscale-improve-finds-its-lora-on-a-docker-install",
+                "2026-08-04-gallery-lightbox-upscale-improve",
+                "2026-08-03-canvas-lightbox-upscale-improve",
+                "2026-08-03-improve-note-cites-the-setting",
+                "2026-08-02-upscale-candidate-visible",
+                "2026-07-30-keep-an-improvement-without-training-on-both",
+                "2026-07-28-choose-the-klein-model-improve-runs-on",
+                "2026-07-28-improve-says-what-it-is-about-to-ask-klein",
+                "2026-07-27-rerun-upscale-and-improve",
+                "2026-07-23-bulk-improve-is-a-server-job",
+                "2026-07-22-improve-tuned-profile-and-loud-missing-lora",
+                "2026-07-22-enhancement-lora-installed-automatically",
+                "2026-07-22-improve-strength-settings",
+                "2026-09-07-image-upscale-product"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "filesystem",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_image_upscale",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.1.1.1"
+          },
+          "manifest_sha256": "c72254c6e6249ee14779ad0969cbc69e56309a5ebc261109e6b33a0f078a0fd5",
+          "presentation": {
+            "images": [
+              {
+                "alt": "Compare the original image with a Klein improvement.",
+                "caption": "Compare the original image with a Klein improvement.",
+                "height": 1145,
+                "id": "overview",
+                "target": "media/image_upscale/1.1.1.1/4b9a953d6418e5f7632a9489698c66a78ff65c63a42570f873a5942978de1e50.png",
+                "width": 1600
+              }
+            ],
+            "schema_version": 1
+          },
+          "price": {
+            "kind": "free"
+          },
+          "target": "plugins/image_upscale/1.1.1.1.ldsplugin",
+          "published_at": "2026-11-24T19:13:28.138428Z"
+        },
+        {
+          "changelog": [
             "Public V2 edition. Install and manage this plugin from LDS Plugins."
           ],
           "manifest": {
@@ -7284,6 +7665,215 @@
             ],
             "schema_version": 1
           }
+        },
+        {
+          "changelog": [
+            "Setup downloads the original SeedVR2 node pack from the LDS server and verifies its checksum.",
+            "Public V2 edition. Install and manage this plugin from LDS Plugins."
+          ],
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.20",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.15.01",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Faithful image restoration with SeedVR2, including high-resolution tiling, model preparation, settings and independent finishing. No Klein Improve or other LDS plug-in required.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Restore dataset images",
+                  "path": "/datasets?section=images"
+                },
+                {
+                  "label": "Restore Bank images",
+                  "path": "/bank"
+                },
+                {
+                  "label": "Open settings",
+                  "path": "/plugins/seedvr2/settings?focus=seedvr2-engine"
+                }
+              ],
+              "setup": {
+                "label": "Prepare SeedVR2",
+                "path": "/plugins/seedvr2/settings"
+              },
+              "setup_hint": "Connect a compatible ComfyUI Windows portable, then prepare the SeedVR2 node pack and its two model files together. Restart ComfyUI when idle and re-check readiness. Existing packages are preserved; TTP tiling remains optional. No other LDS plugin is required.",
+              "surfaces": [
+                "Bank",
+                "Dataset",
+                "Gallery",
+                "Canvas",
+                "Upscale settings",
+                "Upscale setup"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#seedvr2-upscaling-local"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0"
+            },
+            "id": "seedvr2",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "SeedVR2",
+            "node_packs": [
+              {
+                "classes": [
+                  "SeedVR2LoadDiTModel",
+                  "SeedVR2LoadVAEModel",
+                  "SeedVR2VideoUpscaler"
+                ],
+                "installation": {
+                  "action": "seedvr2_nodes",
+                  "archive_prefix": "ComfyUI-SeedVR2_VideoUpscaler-4490bd1f482e026674543386bb2a4d176da245b9",
+                  "folder": "seedvr2_videoupscaler",
+                  "id": "seedvr2",
+                  "python": ">=3.12",
+                  "requirements": [
+                    "torch==2.14.0",
+                    "torchvision==0.29.0",
+                    "safetensors==0.8.0",
+                    "numpy==2.5.2",
+                    "tqdm==4.70.1",
+                    "psutil==7.2.2",
+                    "einops==0.8.2",
+                    "omegaconf==2.3.1",
+                    "diffusers==0.40.0",
+                    "peft==0.20.0",
+                    "rotary-embedding-torch==0.9.1",
+                    "opencv-python==5.0.0.93",
+                    "gguf==0.19.0",
+                    "matplotlib==3.11.2",
+                    "antlr4-python3-runtime==4.9.3"
+                  ],
+                  "sha256": "04c61842bc00fd8673e6bc9a3b1b1935955461f363791070ed14d67d2a2e77fb",
+                  "url": "https://lds.perfectgf.fr/models/tools/04c61842bc00fd8673e6bc9a3b1b1935955461f363791070ed14d67d2a2e77fb/ComfyUI-SeedVR2_VideoUpscaler.zip",
+                  "version": "2.5.24-lds.1",
+                  "wheelhouse": "resources/wheels",
+                  "wheels": [
+                    {
+                      "filename": "antlr4_python3_runtime-4.9.3+lds.1-py3-none-any.whl",
+                      "sha256": "4e909ac01d54970b10622e90c2645dad8b186d4d79b5864fa60bb155379173ef"
+                    }
+                  ]
+                },
+                "pack": "SeedVR2",
+                "search": "SeedVR2",
+                "url": "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
+              }
+            ],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "seedvr2"
+              ],
+              "engines": [
+                "seedvr2"
+              ],
+              "help_topics": [
+                "action-seedvr2-restore",
+                "seedvr2.finish_sharpen",
+                "seedvr2.finish_grain",
+                "seedvr2.finish_grain_saturation",
+                "seedvr2.tiling",
+                "seedvr2.tile_px",
+                "seedvr2.tile_threshold",
+                "seedvr2.vae",
+                "setup-seedvr2-install",
+                "seedvr2.default_engine"
+              ],
+              "install_actions": [
+                "seedvr2_nodes",
+                "seedvr2_model",
+                "seedvr2_vae"
+              ],
+              "install_groups": [
+                "seedvr2"
+              ],
+              "model_slots": [],
+              "probes": [
+                "comfyui.seedvr2_missing",
+                "comfyui.seedvr2_invalid",
+                "comfyui.seedvr2_nodes_missing",
+                "comfyui.seedvr2_nodes_installed",
+                "comfyui.seedvr2_ready",
+                "comfyui.seedvr2_tiling_ready",
+                "comfyui.seedvr2_tiling_nodes_missing",
+                "comfyui.seedvr2_ceiling_mp"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-09-10-seedvr2-node-discovery-retry",
+                "2026-09-10-seedvr2-overlapping-tile-joins",
+                "2026-09-10-seedvr2-complete-tiles-and-finishing",
+                "2026-09-07-seedvr2-standalone",
+                "2026-08-03-seedvr2-tile-and-vae-settings",
+                "2026-08-03-seedvr2-tiling-is-a-choice",
+                "2026-08-03-seedvr2-tiled-highres",
+                "2026-08-02-seedvr2-in-the-lightbox",
+                "2026-08-02-seedvr2-results-come-back",
+                "2026-08-02-seedvr2-upscaling",
+                "2026-08-04-seedvr2-settings-say-which-lane-your-target-takes"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "filesystem",
+              "datasets:write"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LoRA Dataset Studio"
+            },
+            "python_package": "lds_seedvr2",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.0.6.1"
+          },
+          "manifest_sha256": "410ce1e59d849f3a4c20276b7e0e6aba3f1ecf770b9b8eb9b0c0f0efb358fcc2",
+          "presentation": {
+            "images": [
+              {
+                "alt": "Prepare SeedVR2 and choose its restoration models independently of Klein Improve.",
+                "caption": "Prepare SeedVR2 and choose its restoration models independently of Klein Improve.",
+                "height": 1000,
+                "id": "overview",
+                "target": "media/seedvr2/1.0.6.1/0f37cd404344467ad0587c21eda4983b86bd1a2c8de0abff0de4b64c99a12e2f.png",
+                "width": 1440
+              }
+            ],
+            "schema_version": 1
+          },
+          "price": {
+            "kind": "free"
+          },
+          "target": "plugins/seedvr2/1.0.6.1.ldsplugin",
+          "published_at": "2026-11-24T19:13:28.138428Z"
         },
         {
           "changelog": [
@@ -12012,6 +12602,437 @@
                 "height": 888,
                 "id": "overview",
                 "target": "media/video/1.3.22/992fc9ebd6d0f3ebda846d66764ae9666de4b4a370c26b2c3db8b82556834865.png",
+                "width": 1100
+              }
+            ],
+            "schema_version": 1
+          }
+        },
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.22",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.15.01",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Create and train video datasets, curate clips in Video Bank, and generate video with H3, identity references, continuations and montages.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Video Bank",
+                  "path": "/video-bank"
+                },
+                {
+                  "label": "Open Test Studio",
+                  "path": "/studio"
+                }
+              ],
+              "setup": {
+                "label": "Configure",
+                "path": "/plugins/video/settings"
+              },
+              "setup_hint": "Decoding, analysis and generation have separate prerequisites. Setup reports what is available for each function.",
+              "surfaces": [
+                "Video bank",
+                "Video datasets",
+                "Video Test Studio",
+                "Video settings"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [],
+              "sections": [
+                "settings-reference#video-lane-configuration-keys",
+                "using-the-app#the-video-bank-turn-a-folder-of-rushes-into-shots",
+                "using-the-app#triage-a-video-bank-from-the-keyboard",
+                "using-the-app#measure-your-shots-and-choose-your-own-cuts",
+                "using-the-app#retouch-a-cut-trim-split-or-draw-a-shot-by-hand",
+                "using-the-app#change-how-often-a-rush-gets-cut",
+                "using-the-app#find-scenes-in-a-video-bank-by-typing-a-word",
+                "using-the-app#describe-your-shots-and-search-what-happens-in-them",
+                "using-the-app#video-training-sets-and-the-two-things-to-check-before-you-cut-one",
+                "using-the-app#work-on-a-video-training-set",
+                "using-the-app#render-and-compare-video-checkpoint-previews",
+                "using-the-app#remember-best-settings-for-a-video-lora",
+                "using-the-app#test-a-video-lora-before-you-trust-it",
+                "using-the-app#continue-a-clip-from-its-last-frame",
+                "using-the-app#make-a-video-from-references",
+                "using-the-app#match-the-format-of-a-reference-video",
+                "using-the-app#choose-references-from-the-library",
+                "using-the-app#automatic-continuation",
+                "using-the-app#smooth-pick-the-rate-before-it-runs",
+                "settings-reference#video-reference-render-settings",
+                "settings-reference#video-studio-automatic-continuation",
+                "using-the-app#first-frame-identity-refmods"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==12.3.0",
+              "requests": "==2.34.2",
+              "sqlalchemy": "==2.0.52"
+            },
+            "id": "video",
+            "in_process_requirements": true,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Video lane",
+            "node_packs": [
+              {
+                "classes": [
+                  "MiniMaxH3RefModExtract",
+                  "MiniMaxH3RefModApply"
+                ],
+                "installation": {
+                  "action": "h3_refmods_nodes",
+                  "archive_prefix": "ComfyUI-MiniMaxH3Mod-22ca77e247375dd47fc7340286b5f391887d3410",
+                  "folder": "ComfyUI-MiniMaxH3Mod",
+                  "id": "h3-refmods",
+                  "requirements": [
+                    "safetensors==0.6.2",
+                    "numpy==2.2.6",
+                    "Pillow==12.3.0"
+                  ],
+                  "sha256": "40fa27ee131a635bf3eea1758f6450dade42b15772975a75254ac418e8763f54",
+                  "url": "https://lds.perfectgf.fr/models/tools/40fa27ee131a635bf3eea1758f6450dade42b15772975a75254ac418e8763f54/ComfyUI-MiniMaxH3Mod.zip",
+                  "version": "0.2.5"
+                },
+                "pack": "ComfyUI-MiniMaxH3Mod",
+                "url": "https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod"
+              },
+              {
+                "classes": [
+                  "SpectrumApplyMiniMaxH3"
+                ],
+                "installation": {
+                  "action": "h3_spectrum_nodes",
+                  "archive_prefix": "ComfyUI-Spectrum-MiniMax-H3-5161f0457bc8c52535212d6783eee73f439e1537",
+                  "folder": "ComfyUI-Spectrum-MiniMax-H3",
+                  "id": "h3-spectrum",
+                  "requirements": [],
+                  "sha256": "7a7f71461e8196665863802a37dbfbf6bd78ce7fd0f9d33e7ffa4130c282de1c",
+                  "url": "https://lds.perfectgf.fr/models/tools/7a7f71461e8196665863802a37dbfbf6bd78ce7fd0f9d33e7ffa4130c282de1c/ComfyUI-Spectrum-MiniMax-H3.zip",
+                  "version": "0.1.0"
+                },
+                "pack": "ComfyUI-Spectrum-MiniMax-H3",
+                "url": "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
+              },
+              {
+                "classes": [
+                  "ClipProjApply"
+                ],
+                "installation": {
+                  "action": "h3_clipproj_nodes",
+                  "archive_prefix": "ComfyUI-ClipProj-c01ba8fb8f41b4f2094dbd0b185cdc238fb6134c",
+                  "folder": "ComfyUI-ClipProj",
+                  "id": "h3-clipproj",
+                  "requirements": [],
+                  "sha256": "5db98923f741bafd1beb56649df23a0f7981055ab482b3c34da9778083e995df",
+                  "url": "https://lds.perfectgf.fr/models/tools/5db98923f741bafd1beb56649df23a0f7981055ab482b3c34da9778083e995df/ComfyUI-ClipProj.zip",
+                  "version": "0.1.13"
+                },
+                "pack": "ComfyUI-ClipProj",
+                "url": "https://github.com/nicolab28/ComfyUI-ClipProj"
+              }
+            ],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [
+                "video_caption",
+                "video_bank",
+                "custom_shots"
+              ],
+              "engines": [],
+              "help_topics": [
+                "setup-video-studio",
+                "video-checkpoint-previews",
+                "video-best-settings",
+                "page-video-bank",
+                "page-video-dataset",
+                "page-video-studio",
+                "video-studio-references",
+                "video-studio-reference-model",
+                "video-reference-library",
+                "video-reference-cut",
+                "video-reference-format",
+                "video-reference-observer",
+                "video-acceleration",
+                "video-base-light",
+                "video-continue",
+                "video-auto-continue",
+                "video-batch-prompt",
+                "video-shots",
+                "video-start-frame-viewer",
+                "video-last-frame-tab",
+                "video-smooth-rate",
+                "video-studio-start-frame",
+                "video-studio-motion-writer",
+                "video-studio-quick-prompts",
+                "video-bank-passes",
+                "video-burst-triage",
+                "video-quality-cuts",
+                "video-trim-split",
+                "video-shot-threshold",
+                "video-single-shot",
+                "video-transition-kind",
+                "video-captions",
+                "video-caption-wording",
+                "video-audio-cuts",
+                "video-source-cap",
+                "video-edge-trim",
+                "video-duplicate-shots",
+                "video-watermark-flag",
+                "video-safe-zone",
+                "video-defect-sweep",
+                "video-ai-check",
+                "video-camera-motion",
+                "video-temporal-coherence",
+                "video-flag-chips",
+                "video-bank-search",
+                "video-capability-pieces",
+                "video-datasets",
+                "video-dataset-clips",
+                "video-dataset-captions",
+                "video-dataset-references",
+                "video-dataset-training",
+                "video-dataset-checkpoints",
+                "video-dataset-studio",
+                "video-training-controls",
+                "video-train-local",
+                "video-promote-target",
+                "video-first-frame-refmods",
+                "video-dataset-import"
+              ],
+              "install_actions": [
+                "video",
+                "video_host",
+                "shot_detect",
+                "h3_base",
+                "h3_text_encoder",
+                "h3_video_vae",
+                "h3_audio_vae",
+                "h3_base_light",
+                "h3_turbo_lora",
+                "h3_parasyte_lora",
+                "h3_dareties_lora",
+                "h3_video_vae_int8",
+                "h3_ref_base",
+                "h3_ref_base_light",
+                "h3_ref_base_eros",
+                "h3_ref_turbo_4_lora",
+                "h3_ref_turbo_8_lora",
+                "h3_vdn_stage",
+                "h3_vdn_stage_int8",
+                "h3_refmods_nodes",
+                "h3_fasth3_lora",
+                "h3_taomate_lora",
+                "h3_spectrum_nodes",
+                "h3_fast_writer",
+                "h3_clip_projection",
+                "h3_clipproj_nodes"
+              ],
+              "install_groups": [],
+              "job_kinds": [
+                "is_video_test"
+              ],
+              "model_slots": [],
+              "probes": [
+                "video_host_ready",
+                "comfyui.video_studio_missing",
+                "comfyui.video_studio_ready",
+                "comfyui.video_studio_reference",
+                "comfyui.video_studio_options",
+                "comfyui.video_studio_sage",
+                "comfyui.h3_attention_nodes_missing",
+                "comfyui.h3_attention_nodes_installed",
+                "video",
+                "video_detail",
+                "video_decode",
+                "video_detect",
+                "video_encode"
+              ],
+              "tables": [
+                "video_bank",
+                "video_source",
+                "video_clip",
+                "video_dataset",
+                "video_dataset_clip",
+                "video_test_clip",
+                "video_checkpoint_preview"
+              ],
+              "whats_new_ids": [
+                "2026-09-28-video-analysis-progress",
+                "2026-09-26-video-publishing-help",
+                "2026-09-25-video-continue-references",
+                "2026-09-24-video-gallery-performance",
+                "2026-09-24-video-clipproj",
+                "2026-09-23-video-official-int8-vae",
+                "2026-09-23-video-refmods-no-count-limit",
+                "2026-09-23-video-reference-lightbox",
+                "2026-09-23-video-recover-saved-mp4",
+                "2026-09-23-video-performance-playback",
+                "2026-09-23-video-workload-choice",
+                "2026-09-23-video-import-selection",
+                "2026-09-23-create-video-dataset",
+                "2026-09-20-video-refmods-without-frames",
+                "2026-09-20-video-auto-refmod-inputs",
+                "2026-09-19-video-chimera-refmods",
+                "2026-09-09-video-smooth-landscape",
+                "2026-09-09-video-smooth-audio-count",
+                "2026-09-09-video-queue-owner",
+                "2026-09-08-vdn-reference",
+                "2026-09-07-zzzz-continue-a-reference-clip",
+                "2026-09-07-video-live-separate",
+                "2026-09-06-zzzz-video-prompt-survives-reload",
+                "2026-09-06-zzz-video-reference-cut",
+                "2026-09-06-zz-video-joycaption-stills-and-take-lora",
+                "2026-09-06-video-vdn-h3-acceleration",
+                "2026-09-05-zzzz-reference-clip-continue",
+                "2026-09-05-zzzz-reference-video-joycaption",
+                "2026-09-05-zzz-reference-video-format",
+                "2026-09-05-zz-reference-roles-sparse",
+                "2026-09-05-z-reference-library",
+                "2026-09-05-video-graph-previews",
+                "2026-09-04-zzzzzzzzzz-video-civitai-best-settings",
+                "2026-09-04-zzzzzzzzzz-video-auto-continuation",
+                "2026-09-04-zzzzzzzzzz-h3-reference-video",
+                "2026-09-04-zzzzzzzzz-video-training-controls",
+                "2026-09-04-zzzzzz-writers-follow-the-take-and-the-last-frame",
+                "2026-09-04-zzzz-start-frame-viewer-and-last-frame-tab",
+                "2026-09-04-zzz-shots-with-timecodes",
+                "2026-09-04-zz-lighter-w4a8-base",
+                "2026-09-04-z-motion-writer-dials-and-clear",
+                "2026-09-03-video-test-studio-prompts-per-picture",
+                "2026-09-03-video-test-studio-continue-from-last-frame",
+                "2026-09-03-video-accelerations",
+                "2026-09-03-video-run-graph-and-previews",
+                "2026-09-03-video-smooth-rate",
+                "2026-09-03-video-quick-prompts",
+                "2026-09-03-video-studio-render-time",
+                "2026-09-02-video-studio-start-frame-batch",
+                "2026-09-02-video-studio-fast-disk",
+                "2026-09-02-video-studio-preview-size",
+                "2026-09-02-video-studio-active-state-painted",
+                "2026-09-02-video-studio-dataset-clip-posters",
+                "2026-09-02-video-checkpoints-and-loras",
+                "2026-09-01-video-dataset-workspace",
+                "2026-09-01-remove-a-clip-from-a-video-set",
+                "2026-09-02-start-frame-clip-tab-fixed",
+                "2026-09-01-motion-auto-instructed",
+                "2026-09-01-motion-auto-and-enrich",
+                "2026-09-01-video-studio-smooth-vfi",
+                "2026-09-01-reuse-brings-the-start-frame-back",
+                "2026-09-01-video-studio-length-to-15s",
+                "2026-09-01-video-studio-steps-dial",
+                "2026-09-01-start-frame-from-the-gallery",
+                "2026-09-01-video-prep-in-one-button",
+                "2026-09-01-slice-long-shots",
+                "2026-09-01-max-shot-length-cut",
+                "2026-09-01-clip-length-suggestion",
+                "2026-09-01-video-bank-wears-the-bank-shell",
+                "2026-09-01-video-captions-follow-what-you-installed",
+                "2026-09-01-video-captions-fit-the-encoder",
+                "2026-09-01-video-captions-work-under-transformers-5",
+                "2026-08-31-video-test-studio",
+                "2026-08-30-delete-video-runs",
+                "2026-08-30-caption-budget-and-audio",
+                "2026-08-30-sota-video-captions",
+                "2026-08-30-pass-info-dots",
+                "2026-08-30-describe-shots-window",
+                "2026-08-30-video-triage-exits",
+                "2026-08-30-promote-window-knows-the-numbers",
+                "2026-08-30-h3-ref2va-training",
+                "2026-08-30-video-trigger-word",
+                "2026-08-30-h3-i2v-training",
+                "2026-08-30-h3-stills-training",
+                "2026-08-30-video-steps-sized-to-the-dataset",
+                "2026-08-30-h3-trains-the-way-h3-is-trained",
+                "2026-08-19-video-burst-triage",
+                "2026-08-19-video-temporal-coherence",
+                "2026-08-19-video-camera-motion",
+                "2026-08-19-video-ai-check",
+                "2026-08-18-video-defect-sweep",
+                "2026-08-18-video-safe-zone",
+                "2026-08-18-scrape-videos-into-a-video-bank",
+                "2026-08-18-video-look-score",
+                "2026-08-08-shot-threshold-recut",
+                "2026-08-08-single-shot-file",
+                "2026-08-08-min-shot-seconds",
+                "2026-08-07-video-install-checks-the-encoder",
+                "2026-08-06-setup-counts-the-video-pieces",
+                "2026-08-06-shot-detection-installs-its-decoder",
+                "2026-08-06-video-extras-installable-from-setup",
+                "2026-08-06-video-watermark-flag",
+                "2026-08-06-video-duplicate-shots",
+                "2026-08-06-video-flag-chips",
+                "2026-08-04-video-minimum-length",
+                "2026-08-04-video-train-local",
+                "2026-08-04-video-cloud-training",
+                "2026-08-04-video-caption-wording",
+                "2026-08-04-video-caption-model-choice",
+                "2026-08-04-video-describe-shots",
+                "2026-08-04-video-source-cap-knob",
+                "2026-08-04-video-edge-trim",
+                "2026-08-04-video-audio-metrics",
+                "2026-08-04-video-find-scenes",
+                "2026-08-04-video-clip-retouch",
+                "2026-08-04-video-quality-flags",
+                "2026-08-04-video-bank"
+              ]
+            },
+            "permissions": [
+              "comfyui",
+              "gpu",
+              "filesystem",
+              "network",
+              "secrets:VAST_API_KEY"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_video",
+            "requires": [],
+            "schema_version": 2,
+            "version": "1.3.20.2"
+          },
+          "manifest_sha256": "12c874da6ed364c0972b2c2e87c9ebb0a915a6f49a046738abda79a0ca3cd706",
+          "target": "plugins/video/1.3.20.2.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-24T19:13:28.138428Z",
+          "changelog": [
+            "The three ComfyUI node packs and MP4 writer install from verified LDS server files.",
+            "Help search no longer offers a topic about publishing video LoRAs to Civitai, an action the video lane does not provide."
+          ],
+          "presentation": {
+            "images": [
+              {
+                "alt": "Compare a source clip with its neural render side by side.",
+                "caption": "Compare a source clip with its neural render side by side.",
+                "height": 888,
+                "id": "overview",
+                "target": "media/video/1.3.20.2/992fc9ebd6d0f3ebda846d66764ae9666de4b4a370c26b2c3db8b82556834865.png",
                 "width": 1100
               }
             ],
