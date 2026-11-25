@@ -6049,7 +6049,7 @@
                 "x86_64",
                 "arm64"
               ],
-              "lds": ">=2026.11.15.2",
+              "lds": ">=2026.11.16.2",
               "os": [
                 "windows",
                 "linux",
@@ -6150,17 +6150,18 @@
             "requirements": "requirements-workers.txt",
             "requires": [],
             "schema_version": 2,
-            "version": "1.0.10"
+            "version": "1.0.11"
           },
-          "manifest_sha256": "4203631090bb740d1bd33ceec82ceab79e44afa426c4785aa1ae732540318bcc",
-          "target": "plugins/model_tools/1.0.10.ldsplugin",
+          "manifest_sha256": "cd73fcc998de92549f66edc71a2c8d8eb3e7c2ea508c67d5f79ee81806c09be5",
+          "target": "plugins/model_tools/1.0.11.ldsplugin",
           "price": {
             "kind": "free"
           },
-          "published_at": "2026-11-16T17:08:56.817014Z",
+          "published_at": "2026-11-25T05:23:12.534536Z",
           "changelog": [
             "A LoRA is no longer refused for a merge because of the model family LDS reads in its file. The weight names decide, and the family is shown as a hint beside a refusal.",
-            "When the weight names of a LoRA match nothing in the base, the message gives both possible causes instead of stating that it was trained on a different model. Requires LDS 2026.11.15.2 or newer."
+            "When the weight names of a LoRA match nothing in the base, the message gives both possible causes instead of stating that it was trained on a different model.",
+            "Same content as 1.0.10: only the minimum LDS version changes. Requires LDS 2026.11.16.2 or newer."
           ],
           "presentation": {
             "images": [
@@ -6169,7 +6170,7 @@
                 "caption": "Access FP8 conversion and LoRA merging from a full-model card.",
                 "height": 1000,
                 "id": "overview",
-                "target": "media/model_tools/1.0.10/75e20630b2e07398e21ed477ee35580ec9ee6664368a17cedc68444e45341bdc.png",
+                "target": "media/model_tools/1.0.11/75e20630b2e07398e21ed477ee35580ec9ee6664368a17cedc68444e45341bdc.png",
                 "width": 1440
               }
             ],
