@@ -122,6 +122,149 @@
             "python_package": "lds_remove_background",
             "requires": [],
             "schema_version": 2,
+            "version": "1.3.0"
+          },
+          "manifest_sha256": "1c2dc1513695d0e8e2089ec3c45b1336530c0b77ca661e28ff5fbc541d007bc0",
+          "target": "plugins/remove_background/1.3.0.ldsplugin",
+          "price": {
+            "kind": "free"
+          },
+          "published_at": "2026-11-27T16:57:20.252439Z",
+          "changelog": [
+            "Maintenance release: Remove background works as in 1.0.0."
+          ],
+          "presentation": {
+            "schema_version": 1,
+            "images": [
+              {
+                "id": "overview",
+                "target": "media/remove_background/1.3.0/e86d918c7f20a5e360ff109017cde3a663408c4cb5e9a2b0bab28e59afbc5d2a.png",
+                "alt": "The Remove Background editor: a portrait on a transparent background, with what stays, the kind of picture and the result beside it.",
+                "caption": "Say what stays, pick the model that cuts the edge, then touch up the mask and save the result.",
+                "width": 1280,
+                "height": 780
+              }
+            ]
+          }
+        },
+        {
+          "manifest": {
+            "api": 1,
+            "author": "lora-dataset-studio",
+            "bundled": false,
+            "compatibility": {
+              "api": "<2,>=1.23",
+              "arch": [
+                "x86_64",
+                "arm64"
+              ],
+              "lds": ">=2026.11.15",
+              "os": [
+                "windows",
+                "linux",
+                "darwin"
+              ],
+              "python": "<4,>=3.10"
+            },
+            "data_schema": 1,
+            "dependency_versions": {},
+            "description": "Say what stays in a picture (the main subject, a rough selection, a few words or a click) and get a clean cut-out with a mask you can paint on. SAM 3.1 finds it; BiRefNet, RMBG 3.0 or Lucida cuts its edge. Works on imported pictures and from the dataset, Bank and Gallery viewers, on your own ComfyUI.",
+            "experience": {
+              "entrypoints": [
+                {
+                  "label": "Open Remove Background",
+                  "path": "/remove-background"
+                }
+              ],
+              "setup": {
+                "label": "Prepare Remove Background",
+                "path": "/plugins/remove_background/settings"
+              },
+              "setup_hint": "Requires a configured, recent ComfyUI. The everyday models total about 3.1 GB; RMBG 3.0 for the finest edges is optional and non-commercial.",
+              "surfaces": [
+                "Remove Background",
+                "Dataset viewer",
+                "Bank viewer",
+                "Gallery viewer"
+              ]
+            },
+            "frontend": "frontend/index.js",
+            "frontend_styles": [
+              "frontend/styles.css"
+            ],
+            "frontend_workers": [],
+            "guide_ownership": {
+              "chapters": [
+                "remove_background.guide"
+              ],
+              "sections": [
+                "remove_background.guide#remove-the-background",
+                "remove_background.guide#the-result",
+                "remove_background.guide#models"
+              ]
+            },
+            "host_dependencies": {
+              "flask": "==3.1.3",
+              "pillow": "==13.0.0"
+            },
+            "id": "remove_background",
+            "in_process_requirements": false,
+            "license": "PolyForm-Noncommercial-1.0.0",
+            "models": [],
+            "name": "Remove Background",
+            "node_packs": [],
+            "owns": {
+              "config_keys_in_shared_sections": {},
+              "config_sections": [],
+              "engines": [],
+              "help_topics": [
+                "remove-background",
+                "remove-background-setup"
+              ],
+              "install_actions": [
+                "remove_bg_birefnet",
+                "remove_bg_sam",
+                "remove_bg_lucida",
+                "remove_bg_rmbg",
+                "remove_bg_rmbg_text_encoder",
+                "remove_bg_rmbg_vae"
+              ],
+              "install_groups": [
+                "remove_background",
+                "remove_background_fine"
+              ],
+              "job_kinds": [
+                "is_remove_background"
+              ],
+              "model_slots": [],
+              "probes": [
+                "remove_background",
+                "comfyui.remove_background_missing",
+                "comfyui.remove_background_invalid",
+                "comfyui.remove_background_fine_missing",
+                "comfyui.remove_background_fine_invalid"
+              ],
+              "tables": [],
+              "whats_new_ids": [
+                "2026-11-24-remove-background"
+              ]
+            },
+            "permissions": [
+              "banks:read",
+              "comfyui",
+              "datasets:read",
+              "datasets:write",
+              "filesystem",
+              "gpu",
+              "network"
+            ],
+            "publisher": {
+              "id": "lds",
+              "name": "LDS"
+            },
+            "python_package": "lds_remove_background",
+            "requires": [],
+            "schema_version": 2,
             "version": "1.0.0"
           },
           "manifest_sha256": "e59dfb2fd404cf606a187d5e33e1aea1e9db5c311d563244e04e6642fb12f2b0",
